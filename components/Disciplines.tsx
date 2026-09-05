@@ -5,15 +5,6 @@ import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
 import { disciplines } from "@/lib/utils";
 
-const fallbackImages = [
-  "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1533750349088-cd871a92f312?q=80&w=1400&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1400&auto=format&fit=crop",
-];
-
 // Bento spans for a 6-column grid — one tall featured tile on the left
 // (spans two rows) paired with a wide card on the right, then a row of
 // two half-width cards, so the whole block reads as a single clean
@@ -67,7 +58,7 @@ export default function Disciplines() {
             }`}
           >
             <Image
-              src={fallbackImages[i]}
+              src={item.image}
               alt={`${item.title} at Studio Wytes`}
               fill
               sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"

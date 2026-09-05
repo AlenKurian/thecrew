@@ -20,37 +20,37 @@ export const disciplines = [
     number: "01",
     title: "Creative",
     description: "Ideas, concepts, visual thinking & storytelling.",
-    image: "/images/discipline-creative.jpg",
+    image: "/images/creative.png",
   },
   {
     number: "02",
     title: "Production",
     description: "Planning, coordination, execution & behind-the-scenes.",
-    image: "/images/discipline-production.jpg",
+    image: "/images/production.png",
   },
   {
     number: "03",
     title: "Events",
     description: "Live experiences, timelines, people & moving parts.",
-    image: "/images/discipline-events.jpg",
+    image: "/images/events.png",
   },
   {
     number: "04",
     title: "Media",
     description: "Photography, videography, content & digital storytelling.",
-    image: "/images/discipline-media.jpg",
+    image: "/images/media.jpeg",
   },
   {
     number: "05",
     title: "Marketing",
     description: "Brand communication, audience thinking & campaigns.",
-    image: "/images/discipline-marketing.jpg",
+    image: "/images/marketing.png",
   },
   {
     number: "06",
     title: "Operations",
     description: "Systems, coordination & precision behind the scene.",
-    image: "/images/discipline-operations.jpg",
+    image: "/images/operation.png",
   },
 ];
 

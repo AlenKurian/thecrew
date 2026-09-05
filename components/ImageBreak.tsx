@@ -59,7 +59,7 @@ export default function ImageBreak() {
 
       <div className="image-break-overlay absolute inset-0 flex items-center justify-center px-4 text-center xs:px-5">
         <h2 className="font-display text-[10vw] uppercase leading-[0.95] text-paper drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)] xs:text-[12vw] sm:text-[6vw]">
-          This Is the Room.
+          This Is the Room
         </h2>
       </div>
 
