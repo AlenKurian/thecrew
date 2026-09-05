@@ -95,12 +95,12 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="hero-sub mt-6 max-w-md text-sm text-paper/85 xs:mt-4 xs:text-base sm:mt-8 sm:text-lg">
+        <p className="hero-sub mt-10 max-w-md text-sm text-paper/85 xs:mt-8 xs:text-base sm:mt-8 sm:text-lg">
           We&rsquo;re looking for people who want to be in the room where it
           happens.
         </p>
 
-        <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
+        <div className="hero-cta mt-12 flex flex-wrap items-center gap-5 xs:mt-10 sm:mt-10">
           <a
             href="#apply"
             className="group inline-flex items-center gap-2 bg-crew-orange px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-300 hover:bg-paper xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
@@ -114,7 +114,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll font-meta mt-10 flex items-center justify-end gap-2 text-[10px] text-paper/60 xs:text-[11px] sm:absolute sm:bottom-10 sm:right-10 sm:mt-0">
+      <div className="hero-scroll font-meta mt-14 flex items-center justify-end gap-2 text-[10px] text-paper/60 xs:mt-12 xs:text-[11px] sm:absolute sm:bottom-10 sm:right-10 sm:mt-0">
         <span>Scroll to enter</span>
         <span className="animate-bounce">↓</span>
       </div>
