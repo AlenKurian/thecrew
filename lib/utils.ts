@@ -59,33 +59,39 @@ export const included = [
     number: "01",
     title: "7-Day Stay",
     description: "Accommodation provided throughout the entire program.",
+    icon: "stay",
   },
   {
     number: "02",
     title: "Food Provided",
     description: "Your essentials are covered so you focus on creating.",
+    icon: "food",
   },
   {
     number: "03",
     title: "Hands-On",
     description: "Learn by participating in active, real event production.",
+    icon: "hands-on",
   },
   {
     number: "04",
     title: "Networking",
     description: "Connect across creative, business, media & startup sectors.",
+    icon: "networking",
   },
   {
     number: "05",
     title: "Team Access",
     description: "Get close access to the core team behind the projects.",
+    icon: "team-access",
   },
   {
     number: "06",
     title: "Certificate",
     description: "Official recognition for participation & contribution.",
+    icon: "certificate",
   },
-];
+] as const;
 
 export const whoItsForDetails = [
   { label: "Students", description: "Ready to step beyond the classroom." },

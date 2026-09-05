@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
 import { included } from "@/lib/utils";
+import BenefitIcon from "./BenefitIcon";
 
 export default function Benefits() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -60,6 +61,10 @@ export default function Benefits() {
               <span className="font-display text-xl text-paper xs:text-2xl sm:text-4xl">
                 {item.number}
               </span>
+              <BenefitIcon
+                name={item.icon}
+                className="h-6 w-6 shrink-0 text-ink xs:h-7 xs:w-7 sm:h-9 sm:w-9"
+              />
               <div className="flex flex-col gap-1">
                 <span className="font-display text-[5.5vw] uppercase leading-tight xs:text-[5.5vw] sm:text-[2.4vw]">
                   {item.title}
