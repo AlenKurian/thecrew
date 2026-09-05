@@ -77,6 +77,9 @@ export default function Hero() {
 
       {/* Main headline */}
       <div className="max-w-5xl">
+        <span className="hero-meta mb-3 block font-meta text-[11px] text-crew-orange xs:hidden">
+          The Crew
+        </span>
         <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
           <span className="line-clip block">
             <span className="hero-line block text-[12vw] xs:text-[14vw] sm:text-[9vw] lg:text-[7.5vw]">
