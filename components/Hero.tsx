@@ -58,7 +58,7 @@ export default function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative flex min-h-[70svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-8 pt-24 xs:min-h-[80svh] xs:px-6 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-14 sm:pt-32"
+      className="relative flex min-h-[75svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-6 pt-20 xs:min-h-[80svh] xs:px-6 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-14 sm:pt-32"
     >
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
@@ -77,7 +77,7 @@ export default function Hero() {
 
       {/* Main headline */}
       <div className="max-w-5xl">
-        <h1 className="font-display text-paper leading-[0.95]">
+        <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
           <span className="line-clip block">
             <span className="hero-line block text-[12vw] xs:text-[14vw] sm:text-[9vw] lg:text-[7.5vw]">
               7 DAYS.
@@ -95,12 +95,12 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className="hero-sub mt-4 max-w-md text-sm text-paper/85 xs:text-base sm:mt-8 sm:text-lg">
+        <p className="hero-sub mt-6 max-w-md text-sm text-paper/85 xs:mt-4 xs:text-base sm:mt-8 sm:text-lg">
           We&rsquo;re looking for people who want to be in the room where it
           happens.
         </p>
 
-        <div className="hero-cta mt-6 flex flex-wrap items-center gap-5 sm:mt-10">
+        <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
           <a
             href="#apply"
             className="group inline-flex items-center gap-2 bg-crew-orange px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-300 hover:bg-paper xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
@@ -114,7 +114,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll font-meta absolute bottom-4 right-4 flex items-center gap-2 text-[10px] text-paper/60 xs:bottom-6 xs:right-6 xs:text-[11px] sm:bottom-10 sm:right-10">
+      <div className="hero-scroll font-meta mt-10 flex items-center justify-end gap-2 text-[10px] text-paper/60 xs:text-[11px] sm:absolute sm:bottom-10 sm:right-10 sm:mt-0">
         <span>Scroll to enter</span>
         <span className="animate-bounce">↓</span>
       </div>
