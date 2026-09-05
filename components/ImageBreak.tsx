@@ -48,13 +48,13 @@ export default function ImageBreak() {
     >
       <div ref={imageRef} className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=2400&auto=format&fit=crop"
+          src="/images/Room.png"
           alt="Studio Wytes production crew working behind the scenes on a live event set in Calicut, Kerala"
           fill
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-ink/25" />
+        <div className="absolute inset-0 bg-ink/55" />
       </div>
 
       <div className="image-break-overlay absolute inset-0 flex items-center justify-center px-4 text-center xs:px-5">
