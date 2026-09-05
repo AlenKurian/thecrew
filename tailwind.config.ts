@@ -8,11 +8,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0a0a0a",
-        paper: "#f3ede4",
-        crew: {
-          orange: "#FF571F",
-        },
+        ink: "#0b0b0b",
+        paper: "#fdfcf9",
       },
       fontFamily: {
         display: ["var(--font-anton)"],

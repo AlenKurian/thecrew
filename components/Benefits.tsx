@@ -48,7 +48,7 @@ export default function Benefits() {
         <h2 className="benefits-heading font-display text-[10vw] uppercase leading-[0.95] xs:text-[11vw] sm:text-[6vw] lg:sticky lg:top-32 lg:self-start">
           We&rsquo;ve Got
           <br />
-          You <span className="text-crew-orange">Covered.</span>
+          You <span className="text-paper">Covered.</span>
         </h2>
 
         <ul className="flex flex-col">
@@ -57,12 +57,17 @@ export default function Benefits() {
               key={item.number}
               className="benefit-item flex items-center gap-4 border-t border-ink/15 py-4 last:border-b xs:gap-6 xs:py-6 sm:gap-10 sm:py-8"
             >
-              <span className="font-display text-xl text-crew-orange xs:text-2xl sm:text-4xl">
+              <span className="font-display text-xl text-paper xs:text-2xl sm:text-4xl">
                 {item.number}
               </span>
-              <span className="font-display text-[5.5vw] uppercase leading-tight xs:text-[5.5vw] sm:text-[2.4vw]">
-                {item.title}
-              </span>
+              <div className="flex flex-col gap-1">
+                <span className="font-display text-[5.5vw] uppercase leading-tight xs:text-[5.5vw] sm:text-[2.4vw]">
+                  {item.title}
+                </span>
+                <span className="text-xs text-ink/60 xs:text-sm">
+                  {item.description}
+                </span>
+              </div>
             </li>
           ))}
         </ul>

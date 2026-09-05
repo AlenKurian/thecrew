@@ -58,7 +58,7 @@ export default function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative flex min-h-[80svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-14 pt-20 xs:min-h-[85svh] xs:px-6 xs:pb-16 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-14 sm:pt-32"
+      className="relative flex min-h-[95svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-24 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-28 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-14 sm:pt-32"
     >
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
@@ -77,7 +77,7 @@ export default function Hero() {
 
       {/* Main headline */}
       <div className="max-w-5xl">
-        <span className="hero-meta mb-3 block font-meta text-[11px] text-crew-orange xs:hidden">
+        <span className="hero-meta mb-3 block font-meta text-[11px] text-paper xs:hidden">
           The Crew
         </span>
         <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
@@ -92,7 +92,7 @@ export default function Hero() {
             </span>
           </span>
           <span className="line-clip block">
-            <span className="hero-line block text-crew-orange text-[10.5vw] xs:text-[12.5vw] sm:text-[8.5vw] lg:text-[7vw]">
+            <span className="hero-line block text-paper text-[10.5vw] xs:text-[12.5vw] sm:text-[8.5vw] lg:text-[7vw]">
               A ROOM FULL OF POSSIBILITY.
             </span>
           </span>
@@ -106,7 +106,7 @@ export default function Hero() {
         <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
           <a
             href="#apply"
-            className="group inline-flex items-center gap-2 bg-crew-orange px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-300 hover:bg-paper xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
+            className="group inline-flex items-center gap-2 bg-paper px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-300 hover:bg-paper/80 xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
           >
             Apply for the Crew
             <span className="transition-transform duration-300 group-hover:translate-x-1">

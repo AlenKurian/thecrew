@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
-import { audience } from "@/lib/utils";
+import { audience, whoItsForDetails } from "@/lib/utils";
 
 /**
  * Three horizontal rows of tiles, each scrolling continuously in the
@@ -45,9 +45,9 @@ function Tile({ tile }: { tile: Tile }) {
     <div
       className={`flex shrink-0 items-center border px-4 py-4 font-sans text-sm leading-tight xs:px-6 xs:py-6 xs:text-lg sm:px-8 sm:text-xl ${
         tile.variant === "solid"
-          ? "border-crew-orange bg-crew-orange text-ink"
+          ? "border-paper bg-paper text-ink"
           : tile.variant === "outline"
-            ? "border-crew-orange text-crew-orange"
+            ? "border-paper text-paper"
             : "border-paper/15 text-paper/90"
       }`}
     >
@@ -175,6 +175,22 @@ export default function WhoItsFor() {
             </div>
           ))}
         </div>
+      </div>
+
+      <div className="relative mt-12 grid grid-cols-1 gap-3 xs:mt-16 xs:gap-4 sm:mt-24 sm:grid-cols-2 sm:gap-5">
+        {whoItsForDetails.map((item) => (
+          <div
+            key={item.label}
+            className="who-row border border-paper/15 px-4 py-4 xs:px-6 xs:py-5"
+          >
+            <span className="font-display text-sm uppercase text-paper xs:text-base">
+              {item.label}
+            </span>
+            <span className="ml-2 text-xs text-paper/70 xs:text-sm">
+              — {item.description}
+            </span>
+          </div>
+        ))}
       </div>
     </section>
   );

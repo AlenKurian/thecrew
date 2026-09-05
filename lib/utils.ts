@@ -19,45 +19,82 @@ export const disciplines = [
   {
     number: "01",
     title: "Creative",
+    description: "Ideas, concepts, visual thinking & storytelling.",
     image: "/images/discipline-creative.jpg",
   },
   {
     number: "02",
     title: "Production",
+    description: "Planning, coordination, execution & behind-the-scenes.",
     image: "/images/discipline-production.jpg",
   },
   {
     number: "03",
     title: "Events",
+    description: "Live experiences, timelines, people & moving parts.",
     image: "/images/discipline-events.jpg",
   },
   {
     number: "04",
     title: "Media",
+    description: "Photography, videography, content & digital storytelling.",
     image: "/images/discipline-media.jpg",
   },
   {
     number: "05",
     title: "Marketing",
+    description: "Brand communication, audience thinking & campaigns.",
     image: "/images/discipline-marketing.jpg",
   },
   {
     number: "06",
     title: "Operations",
+    description: "Systems, coordination & precision behind the scene.",
     image: "/images/discipline-operations.jpg",
-  },
-  {
-    number: "07",
-    title: "Experience",
-    image: "/images/discipline-experience.jpg",
   },
 ];
 
 export const included = [
-  { number: "01", title: "7-Day Stay" },
-  { number: "02", title: "Food Provided" },
-  { number: "03", title: "Hands-On Experience" },
-  { number: "04", title: "Networking" },
-  { number: "05", title: "Team Access" },
-  { number: "06", title: "Certificate / Experience Recognition" },
+  {
+    number: "01",
+    title: "7-Day Stay",
+    description: "Accommodation provided throughout the entire program.",
+  },
+  {
+    number: "02",
+    title: "Food Provided",
+    description: "Your essentials are covered so you focus on creating.",
+  },
+  {
+    number: "03",
+    title: "Hands-On",
+    description: "Learn by participating in active, real event production.",
+  },
+  {
+    number: "04",
+    title: "Networking",
+    description: "Connect across creative, business, media & startup sectors.",
+  },
+  {
+    number: "05",
+    title: "Team Access",
+    description: "Get close access to the core team behind the projects.",
+  },
+  {
+    number: "06",
+    title: "Certificate",
+    description: "Official recognition for participation & contribution.",
+  },
+];
+
+export const whoItsForDetails = [
+  { label: "Students", description: "Ready to step beyond the classroom." },
+  { label: "Creators", description: "Turning raw ideas into reality." },
+  { label: "Marketers", description: "Understanding brand experiences." },
+  { label: "Storytellers", description: "Thinking in visuals & narratives." },
+  {
+    label: "Event Enthusiasts",
+    description: "Experiencing live execution.",
+  },
+  { label: "Entrepreneurs", description: "Learning fast in action." },
 ];

@@ -70,7 +70,7 @@ export default function ImageBreak() {
       </div>
       <div className="absolute bottom-5 right-4 xs:bottom-8 xs:right-6 sm:bottom-12 sm:right-10">
         <span className="font-display text-xs uppercase tracking-wide text-paper xs:text-sm">
-          Studio Wytes™
+          Studio Wytes<sup className="relative -top-[0.6em] text-[0.6em]">™</sup>
         </span>
       </div>
     </section>

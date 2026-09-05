@@ -1,5 +1,9 @@
-const ITEMS = [
-  "STUDIO WYTES™",
+import type { ReactNode } from "react";
+
+const ITEMS: ReactNode[] = [
+  <>
+    STUDIO WYTES<sup className="relative top-[0.5em] align-top text-[0.4em]">™</sup>
+  </>,
   "THE CREW",
   "CALICUT",
   "7 DAYS",
@@ -16,7 +20,7 @@ export default function Marquee() {
         >
           {item}
           <span
-            className="ml-3 inline-block h-1.5 w-1.5 rounded-full bg-crew-orange xs:ml-4 xs:h-2 xs:w-2 sm:ml-6 sm:h-3 sm:w-3"
+            className="ml-3 inline-block h-1.5 w-1.5 rounded-full bg-paper xs:ml-4 xs:h-2 xs:w-2 sm:ml-6 sm:h-3 sm:w-3"
             aria-hidden="true"
           />
         </span>

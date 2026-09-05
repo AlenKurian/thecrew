@@ -10,7 +10,7 @@ export default function OpengraphImage() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#0a0a0a",
+          background: "#0b0b0b",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -19,7 +19,7 @@ export default function OpengraphImage() {
       >
         <div
           style={{
-            color: "#FF571F",
+            color: "#fdfcf9",
             fontSize: 24,
             letterSpacing: 4,
             textTransform: "uppercase",
@@ -30,7 +30,7 @@ export default function OpengraphImage() {
         </div>
         <div
           style={{
-            color: "#f3ede4",
+            color: "#fdfcf9",
             fontSize: 96,
             fontWeight: 900,
             lineHeight: 1.05,
@@ -43,7 +43,7 @@ export default function OpengraphImage() {
         </div>
         <div
           style={{
-            color: "#f3ede4",
+            color: "#fdfcf9",
             fontSize: 28,
             marginTop: 32,
             opacity: 0.7,

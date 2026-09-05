@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
 
-const negatives = ["Not a desk.", "Not a classroom.", "Not just an internship."];
+const negatives = ["Not a desk.", "Not a classroom.", "Not a simulation."];
 const positives = ["Real people.", "Real work.", "Real connections."];
 
 export default function ExperienceStatement() {
@@ -76,7 +76,7 @@ export default function ExperienceStatement() {
             >
               {line.includes("Real") ? (
                 <>
-                  <span className="text-crew-orange">Real</span>
+                  <span className="text-paper">Real</span>
                   {line.replace("Real", "")}
                 </>
               ) : (

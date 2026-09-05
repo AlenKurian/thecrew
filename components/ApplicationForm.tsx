@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const fieldBase =
-  "w-full border-b border-paper/30 bg-transparent py-3 text-base text-paper placeholder:text-paper/40 focus:border-crew-orange focus:outline-none transition-colors duration-300";
+  "w-full border-b border-paper/30 bg-transparent py-3 text-base text-paper placeholder:text-paper/40 focus:border-paper focus:outline-none transition-colors duration-300";
 
 export default function ApplicationForm() {
   const [state, setState] = useState<SubmitState>("idle");
@@ -60,7 +60,7 @@ export default function ApplicationForm() {
   if (state === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-14 text-center xs:py-20">
-        <span className="text-[10px] font-meta text-crew-orange xs:text-[11px]">
+        <span className="text-[10px] font-meta text-paper xs:text-[11px]">
           Success
         </span>
         <h3 className="mt-3 font-display text-[9vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[10vw] sm:text-[5vw]">
@@ -77,7 +77,7 @@ export default function ApplicationForm() {
               .getElementById("top")
               ?.scrollIntoView({ behavior: "smooth" });
           }}
-          className="group mt-8 inline-flex items-center gap-2 border border-paper/30 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-paper transition-colors duration-300 hover:border-crew-orange hover:text-crew-orange xs:mt-10 xs:px-7 xs:py-4 xs:text-xs"
+          className="group mt-8 inline-flex items-center gap-2 border border-paper/30 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-paper transition-colors duration-300 hover:border-paper xs:mt-10 xs:px-7 xs:py-4 xs:text-xs"
         >
           Back to the Experience
           <span className="transition-transform duration-300 group-hover:translate-x-1">
@@ -249,7 +249,7 @@ export default function ApplicationForm() {
         {state === "error" && serverError && (
           <div
             role="alert"
-            className="mt-8 border border-crew-orange/60 bg-crew-orange/10 px-5 py-4 text-sm text-paper"
+            className="mt-8 border border-paper/60 bg-paper/10 px-5 py-4 text-sm text-paper"
           >
             {serverError}
           </div>
@@ -258,7 +258,7 @@ export default function ApplicationForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="group mt-8 inline-flex w-full items-center justify-center gap-2 bg-crew-orange px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper disabled:cursor-not-allowed disabled:opacity-60 xs:mt-12 xs:px-8 xs:py-6 xs:text-sm sm:w-auto sm:px-14"
+          className="group mt-8 inline-flex w-full items-center justify-center gap-2 bg-paper px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper/80 disabled:cursor-not-allowed disabled:opacity-60 xs:mt-12 xs:px-8 xs:py-6 xs:text-sm sm:w-auto sm:px-14"
         >
           {isSubmitting
             ? "Submitting…"
@@ -298,11 +298,11 @@ function Field({
         className="text-[11px] font-meta text-paper/60"
       >
         {label}
-        {required && <span className="ml-1 text-crew-orange">*</span>}
+        {required && <span className="ml-1 text-paper">*</span>}
       </label>
       {children}
       {error && (
-        <p role="alert" className="text-xs font-medium text-crew-orange">
+        <p role="alert" className="text-xs font-medium text-paper underline underline-offset-2">
           {error}
         </p>
       )}

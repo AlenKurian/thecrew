@@ -55,7 +55,7 @@ export default function SevenDays() {
       >
         07
       </div>
-      <span className="font-meta -mt-4 text-xs text-crew-orange xs:-mt-6 xs:text-sm sm:-mt-10 sm:text-lg">
+      <span className="font-meta -mt-4 text-xs text-paper xs:-mt-6 xs:text-sm sm:-mt-10 sm:text-lg">
         Days
       </span>
 
