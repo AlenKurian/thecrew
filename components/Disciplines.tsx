@@ -69,7 +69,7 @@ export default function Disciplines() {
               <span className="font-meta text-[10px] text-paper xs:text-[11px]">
                 {item.number}
               </span>
-              <h3 className="mt-2 font-display text-[6vw] uppercase leading-none text-paper xs:text-[6vw] sm:text-[2.2vw] lg:text-[1.8vw]">
+              <h3 className="mt-2 font-sans text-[6vw] font-semibold uppercase leading-none text-paper xs:text-[6vw] sm:text-[2.2vw] lg:text-[1.8vw]">
                 {item.title}
               </h3>
               <p className="mt-2 max-w-xs text-xs text-paper/70 xs:text-sm">

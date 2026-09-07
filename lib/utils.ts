@@ -26,19 +26,22 @@ export const disciplines = [
     number: "02",
     title: "Production",
     description: "Planning, coordination, execution & behind-the-scenes.",
-    image: "/images/productio.png",
+    image:
+      "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1400&auto=format&fit=crop",
   },
   {
     number: "03",
     title: "Events",
     description: "Live experiences, timelines, people & moving parts.",
-    image: "/images/event.png",
+    image:
+      "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop",
   },
   {
     number: "04",
     title: "Media",
     description: "Photography, videography, content & digital storytelling.",
-    image: "/images/medi.png",
+    image:
+      "https://images.unsplash.com/photo-1601506521793-dc748fc80b67?q=80&w=1400&auto=format&fit=crop",
   },
   {
     number: "05",
