@@ -17,12 +17,6 @@ export const audience = [
 
 export const disciplines = [
   {
-    number: "01",
-    title: "Creative",
-    description: "Ideas, concepts, visual thinking & storytelling.",
-    image: "/images/creative.png",
-  },
-  {
     number: "02",
     title: "Production",
     description: "Planning, coordination, execution & behind-the-scenes.",
@@ -37,23 +31,10 @@ export const disciplines = [
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    number: "04",
-    title: "Media",
-    description: "Photography, videography, content & digital storytelling.",
-    image:
-      "https://images.unsplash.com/photo-1601506521793-dc748fc80b67?q=80&w=1400&auto=format&fit=crop",
-  },
-  {
     number: "05",
     title: "Marketing",
     description: "Brand communication, audience thinking & campaigns.",
     image: "/images/market.png",
-  },
-  {
-    number: "06",
-    title: "Operations",
-    description: "Systems, coordination & precision behind the scene.",
-    image: "/images/operatio.png",
   },
 ];
 

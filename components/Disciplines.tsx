@@ -5,17 +5,10 @@ import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
 import { disciplines } from "@/lib/utils";
 
-// Bento spans for a 6-column grid — one tall featured tile on the left
-// (spans two rows) paired with a wide card on the right, then a row of
-// two half-width cards, so the whole block reads as a single clean
-// rectangle made of differently shaped cards.
 const spans = [
-  "sm:col-span-6 lg:col-span-2 lg:row-span-2", // 0 — featured, tall
-  "sm:col-span-6 lg:col-span-4", // 1 — wide
-  "sm:col-span-3 lg:col-span-2", // 2 — half
-  "sm:col-span-3 lg:col-span-2", // 3 — half
-  "sm:col-span-3", // 4 — half
-  "sm:col-span-3", // 5 — half
+  "sm:col-span-2 sm:row-span-2", // 0 — Production, square, tall
+  "sm:col-span-2", // 1 — Events
+  "sm:col-span-2", // 2 — Marketing
 ];
 
 export default function Disciplines() {
@@ -49,7 +42,7 @@ export default function Disciplines() {
         You&rsquo;ll Get Close To
       </span>
 
-      <div className="grid grid-cols-1 gap-3 xs:gap-4 sm:grid-cols-6 sm:gap-5">
+      <div className="grid grid-cols-1 gap-3 xs:gap-4 sm:grid-cols-4 sm:gap-5">
         {disciplines.map((item, i) => (
           <div
             key={item.title}
