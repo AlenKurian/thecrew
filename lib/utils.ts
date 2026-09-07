@@ -17,21 +17,21 @@ export const audience = [
 
 export const disciplines = [
   {
-    number: "02",
+    number: "01",
     title: "Production",
     description: "Planning, coordination, execution & behind-the-scenes.",
     image:
       "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    number: "03",
+    number: "02",
     title: "Events",
     description: "Live experiences, timelines, people & moving parts.",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    number: "05",
+    number: "03",
     title: "Marketing",
     description: "Brand communication, audience thinking & campaigns.",
     image: "/images/market.png",
