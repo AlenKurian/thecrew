@@ -40,7 +40,7 @@ export default function Disciplines() {
             i % 2 === 1 ? "xs:flex-row-reverse" : ""
           }`}
         >
-          <div className="relative min-h-[280px] w-full overflow-hidden xs:min-h-[420px] xs:w-1/2">
+          <div className="relative min-h-[180px] w-full overflow-hidden xs:min-h-[420px] xs:w-1/2">
             <Image
               src={item.image}
               alt={`${item.title} at Studio Wytes`}
@@ -57,19 +57,19 @@ export default function Disciplines() {
             />
           </div>
 
-          <div className="flex w-full flex-col justify-center px-4 py-10 xs:w-1/2 xs:px-8 xs:py-12 sm:px-14 sm:py-16">
-            <div className="mb-4 flex items-center gap-3 xs:mb-6">
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-paper/40 font-meta text-[11px] text-paper xs:h-11 xs:w-11 xs:text-xs">
+          <div className="flex w-full flex-col justify-center px-3 py-5 xs:w-1/2 xs:px-8 xs:py-12 sm:px-14 sm:py-16">
+            <div className="mb-2 flex items-center gap-2 xs:mb-6 xs:gap-3">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-paper/40 font-meta text-[9px] text-paper xs:h-11 xs:w-11 xs:text-xs">
                 {item.number}
               </span>
               <span className="h-px flex-1 bg-paper/30" />
             </div>
 
-            <h3 className="font-sans text-[9vw] font-semibold uppercase leading-[0.9] text-paper xs:text-[6vw] sm:text-[3vw] lg:text-[2.2vw]">
+            <h3 className="font-sans text-[6vw] font-semibold uppercase leading-[0.9] text-paper xs:text-[6vw] sm:text-[3vw] lg:text-[2.2vw]">
               {item.title}
             </h3>
 
-            <p className="mt-4 max-w-sm text-sm text-paper/70 xs:mt-5 xs:text-base">
+            <p className="mt-2 max-w-sm text-xs text-paper/70 xs:mt-5 xs:text-base">
               {item.description}
             </p>
           </div>
