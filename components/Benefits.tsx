@@ -107,7 +107,7 @@ export default function Benefits() {
           </span>
         </div>
         <span className="hidden items-center gap-3 xs:flex">
-          <span className="font-display text-xl text-ink/30">//</span>
+          <span className="font-display text-xl text-ink/30">{'//'}</span>
           <span className="h-px w-16 bg-ink/30" />
         </span>
       </div>
