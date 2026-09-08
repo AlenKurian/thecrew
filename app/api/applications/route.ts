@@ -1,18 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ZodError } from "zod";
-import { applicationSchema, toApplicationRecord } from "@/lib/validation";
-import { getSupabaseAdmin } from "@/lib/supabase";
+import nodemailer from "nodemailer";
+import { applicationSchema, type ApplicationInput } from "@/lib/validation";
 
 export const runtime = "nodejs";
 
 /**
  * POST /api/applications
  *
- * 1. Validates the request body with Zod (server-side — never trust the client).
- * 2. Checks for a duplicate email.
- * 3. Inserts the application into Supabase.
- * 4. (Optional / stubbed) sends confirmation + notification email via Resend.
- * 5. Returns a safe, minimal success response.
+ * No database. Validates the submission server-side, then emails the
+ * full application to the studio Gmail inbox via Gmail SMTP, and sends
+ * the applicant a branded confirmation. If mail isn't configured the
+ * request fails loudly so a submission is never silently lost.
+ *
+ * Env (see .env.local.example):
+ *   GMAIL_USER          the Gmail address that sends (and receives, by default)
+ *   GMAIL_APP_PASSWORD  a 16-char Google App Password (NOT the account password)
+ *   STUDIO_WYTES_NOTIFY_EMAIL  optional — where applications land (defaults to GMAIL_USER)
  */
 export async function POST(request: NextRequest) {
   let body: unknown;
@@ -36,11 +40,14 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  let supabase;
-  try {
-    supabase = getSupabaseAdmin();
-  } catch (err) {
-    console.error("Supabase not configured:", err);
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_APP_PASSWORD;
+  const notify = process.env.STUDIO_WYTES_NOTIFY_EMAIL || user;
+
+  if (!user || !pass) {
+    console.error(
+      "Mail not configured: set GMAIL_USER and GMAIL_APP_PASSWORD in .env.local."
+    );
     return NextResponse.json(
       {
         ok: false,
@@ -51,72 +58,309 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  // Guard against duplicate applications from the same email.
-  const { data: existing, error: lookupError } = await supabase
-    .from("applications")
-    .select("id")
-    .eq("email", parsed.data.email.toLowerCase())
-    .maybeSingle();
+  const transporter = nodemailer.createTransport({
+    service: "gmail",
+    auth: { user, pass },
+  });
 
-  if (lookupError) {
-    console.error("Supabase lookup error:", lookupError);
+  const data = parsed.data;
+  const submittedAt = new Date().toLocaleString("en-IN", {
+    timeZone: "Asia/Kolkata",
+    dateStyle: "medium",
+    timeStyle: "short",
+  });
+
+  try {
+    await transporter.sendMail({
+      from: `"THE CREW — Applications" <${user}>`,
+      to: notify,
+      replyTo: `"${data.fullName}" <${data.email}>`,
+      subject: `New CREW application — ${data.fullName}`,
+      text: toPlainText(data, submittedAt),
+      html: renderStudioEmail(data, submittedAt),
+    });
+  } catch (err) {
+    console.error("Gmail send error:", err);
     return NextResponse.json(
-      { ok: false, error: "Something went wrong. Please try again." },
-      { status: 500 }
+      { ok: false, error: "We couldn't send your application. Please try again." },
+      { status: 502 }
     );
   }
 
-  if (existing) {
-    return NextResponse.json(
-      {
-        ok: false,
-        error: "An application with this email has already been submitted.",
-      },
-      { status: 409 }
-    );
+  // Best-effort confirmation to the applicant — never fail the request on this.
+  try {
+    await transporter.sendMail({
+      from: `"STUDIO WYTES™ — THE CREW" <${user}>`,
+      to: data.email,
+      subject: "Application received — STUDIO WYTES™ THE CREW",
+      text: confirmationPlainText(data),
+      html: renderApplicantEmail(data),
+    });
+  } catch (err) {
+    console.error("Confirmation email failed (non-fatal):", err);
   }
 
-  const record = toApplicationRecord(parsed.data);
+  return NextResponse.json({ ok: true }, { status: 201 });
+}
 
-  const { data: inserted, error: insertError } = await supabase
-    .from("applications")
-    .insert(record)
-    .select("id")
-    .single();
+/* ------------------------------------------------------------------ */
+/* Field config                                                       */
+/* ------------------------------------------------------------------ */
 
-  if (insertError) {
-    console.error("Supabase insert error:", insertError);
-    return NextResponse.json(
-      { ok: false, error: "Something went wrong. Please try again." },
-      { status: 500 }
-    );
+const LABELS: Record<keyof ApplicationInput, string> = {
+  fullName: "Full name",
+  email: "Email",
+  phone: "Phone",
+  city: "City",
+  role: "What they do",
+  whyJoin: "Why join THE CREW",
+  portfolioUrl: "Portfolio",
+  socialUrl: "Instagram / LinkedIn",
+  skills: "Skills / interests",
+  availability: "Availability",
+};
+
+const PRIMARY: (keyof ApplicationInput)[] = [
+  "fullName",
+  "email",
+  "phone",
+  "city",
+  "role",
+  "whyJoin",
+];
+
+const OPTIONAL: (keyof ApplicationInput)[] = [
+  "portfolioUrl",
+  "socialUrl",
+  "skills",
+  "availability",
+];
+
+const ORDER = [...PRIMARY, ...OPTIONAL];
+
+/* ------------------------------------------------------------------ */
+/* Plain-text fallbacks                                               */
+/* ------------------------------------------------------------------ */
+
+function toPlainText(data: ApplicationInput, submittedAt: string): string {
+  const lines = ORDER.map((key) => {
+    const value = data[key];
+    return `${LABELS[key].toUpperCase()}\n${
+      value && String(value).trim() ? value : "—"
+    }`;
+  });
+  return [
+    "STUDIO WYTES™ — THE CREW",
+    "NEW APPLICATION",
+    `Submitted ${submittedAt} IST`,
+    "",
+    ...lines,
+    "",
+    `Reply to this email to reach ${data.fullName} directly.`,
+  ].join("\n\n");
+}
+
+function confirmationPlainText(data: ApplicationInput): string {
+  return [
+    "STUDIO WYTES™ — THE CREW",
+    "",
+    `Hi ${data.fullName},`,
+    "",
+    "Your application to THE CREW has been received. We'll be in touch.",
+    "",
+    "7 Days. One Experience. Calicut, Kerala.",
+    "",
+    "— STUDIO WYTES™",
+  ].join("\n");
+}
+
+/* ------------------------------------------------------------------ */
+/* HTML email — monochrome, table layout, inline styles               */
+/* ------------------------------------------------------------------ */
+
+const BLACK = "#000000";
+const WHITE = "#ffffff";
+const GREY = "#6b6b6b"; // secondary text / labels
+const FAINT = "#a6a6a6"; // placeholder dashes
+const RULE = "#e4e4e4"; // hairline on white
+
+const MONO =
+  "'SFMono-Regular', ui-monospace, 'JetBrains Mono', Menlo, Consolas, monospace";
+const SANS =
+  "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif";
+
+function esc(value: string): string {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+function isUrl(value: string): boolean {
+  return /^https?:\/\//i.test(value.trim());
+}
+
+function shell(inner: string): string {
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+</head>
+<body style="margin:0;padding:0;background:${WHITE};">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:${WHITE};">
+    <tr>
+      <td align="center" style="padding:56px 16px;">
+        <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="width:560px;max-width:560px;background:${WHITE};border:1px solid ${RULE};">
+          ${inner}
+        </table>
+        <div style="font-family:${MONO};font-size:9px;letter-spacing:0.28em;text-transform:uppercase;color:${FAINT};padding:24px 0 0;">
+          Studio Wytes&trade; &nbsp;&mdash;&nbsp; The Crew
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
+function header(kicker: string, title: string, sub?: string): string {
+  return `
+  <tr>
+    <td style="background:${BLACK};padding:52px 44px 48px;">
+      <div style="font-family:${MONO};font-size:9px;letter-spacing:0.34em;text-transform:uppercase;color:${WHITE};opacity:0.55;">
+        ${esc(kicker)}
+      </div>
+      <div style="font-family:${SANS};font-weight:800;font-size:34px;line-height:1.02;letter-spacing:-0.03em;text-transform:uppercase;color:${WHITE};padding-top:18px;">
+        ${esc(title)}
+      </div>
+      ${
+        sub
+          ? `<div style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:${WHITE};opacity:0.4;padding-top:20px;">${esc(
+              sub
+            )}</div>`
+          : ""
+      }
+    </td>
+  </tr>`;
+}
+
+function fieldRow(
+  key: keyof ApplicationInput,
+  data: ApplicationInput,
+  last: boolean
+): string {
+  const raw = data[key];
+  const has = raw != null && String(raw).trim() !== "";
+  const str = has ? String(raw) : "";
+  let valueHtml: string;
+
+  if (!has) {
+    valueHtml = `<span style="color:${FAINT};">&mdash;</span>`;
+  } else if (isUrl(str)) {
+    valueHtml = `<a href="${esc(str)}" style="color:${BLACK};text-decoration:none;border-bottom:1px solid ${BLACK};word-break:break-all;">${esc(
+      str
+    )}</a>`;
+  } else if (key === "email") {
+    valueHtml = `<a href="mailto:${esc(str)}" style="color:${BLACK};text-decoration:none;border-bottom:1px solid ${BLACK};">${esc(
+      str
+    )}</a>`;
+  } else {
+    valueHtml = esc(str).replace(/\n/g, "<br />");
   }
 
-  // --- Optional email hooks -------------------------------------------
-  // Wire up Resend here once RESEND_API_KEY is set. Kept fire-and-forget
-  // and best-effort so email delivery never blocks or fails the
-  // application submission itself.
-  //
-  // if (process.env.RESEND_API_KEY) {
-  //   const { Resend } = await import("resend");
-  //   const resend = new Resend(process.env.RESEND_API_KEY);
-  //
-  //   await resend.emails.send({
-  //     from: process.env.RESEND_FROM_EMAIL ?? "crew@studiowytes.com",
-  //     to: parsed.data.email,
-  //     subject: "You're on the list — STUDIO WYTES™ THE CREW",
-  //     html: `<p>Hey ${parsed.data.fullName}, your application to THE CREW has been received.</p>`,
-  //   }).catch((err) => console.error("Resend confirmation email failed:", err));
-  //
-  //   if (process.env.STUDIO_WYTES_NOTIFY_EMAIL) {
-  //     await resend.emails.send({
-  //       from: process.env.RESEND_FROM_EMAIL ?? "crew@studiowytes.com",
-  //       to: process.env.STUDIO_WYTES_NOTIFY_EMAIL,
-  //       subject: `New CREW application: ${parsed.data.fullName}`,
-  //       html: `<p>${parsed.data.fullName} (${parsed.data.email}) just applied.</p>`,
-  //     }).catch((err) => console.error("Resend notify email failed:", err));
-  //   }
-  // }
+  return `
+  <tr>
+    <td style="padding:20px 44px;${
+      last ? "" : `border-bottom:1px solid ${RULE};`
+    }">
+      <div style="font-family:${MONO};font-size:9px;letter-spacing:0.24em;text-transform:uppercase;color:${GREY};padding-bottom:8px;">
+        ${esc(LABELS[key])}
+      </div>
+      <div style="font-family:${SANS};font-size:15px;line-height:1.55;color:${BLACK};">
+        ${valueHtml}
+      </div>
+    </td>
+  </tr>`;
+}
 
-  return NextResponse.json({ ok: true, id: inserted?.id }, { status: 201 });
+function sectionLabel(text: string): string {
+  return `
+  <tr>
+    <td style="padding:34px 44px 4px;">
+      <div style="font-family:${MONO};font-size:9px;letter-spacing:0.3em;text-transform:uppercase;color:${BLACK};">
+        ${esc(text)}
+      </div>
+      <div style="height:1px;background:${BLACK};margin-top:12px;font-size:0;line-height:0;">&nbsp;</div>
+    </td>
+  </tr>`;
+}
+
+function rows(keys: (keyof ApplicationInput)[], data: ApplicationInput): string {
+  return keys
+    .map((k, i) => fieldRow(k, data, i === keys.length - 1))
+    .join("");
+}
+
+/** Internal email to the studio — the full application. */
+function renderStudioEmail(data: ApplicationInput, submittedAt: string): string {
+  const inner = `
+  ${header("New Application", "Get in the Room.", `Submitted ${submittedAt} IST`)}
+  ${sectionLabel("Applicant")}
+  ${rows(PRIMARY, data)}
+  ${sectionLabel("Optional")}
+  ${rows(OPTIONAL, data)}
+  <tr>
+    <td style="padding:36px 44px 44px;border-top:1px solid ${RULE};">
+      <a href="mailto:${esc(data.email)}"
+         style="display:inline-block;font-family:${MONO};font-size:10px;font-weight:700;letter-spacing:0.24em;text-transform:uppercase;color:${WHITE};background:${BLACK};padding:16px 32px;text-decoration:none;">
+        Reply to ${esc(data.fullName)} &nbsp;&rarr;
+      </a>
+    </td>
+  </tr>`;
+
+  return shell(inner);
+}
+
+/** Confirmation email to the applicant. */
+function renderApplicantEmail(data: ApplicationInput): string {
+  const inner = `
+  ${header("Application Received", "You're on the List.")}
+  <tr>
+    <td style="padding:44px 44px 8px;">
+      <div style="font-family:${SANS};font-size:15px;line-height:1.7;color:${BLACK};">
+        Hi ${esc(data.fullName)},
+      </div>
+      <div style="font-family:${SANS};font-size:15px;line-height:1.7;color:${BLACK};padding-top:18px;">
+        Your application to <strong style="font-weight:700;">THE CREW</strong>
+        has been received. We&rsquo;ll be in touch.
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:36px 44px;">
+      <div style="border-top:1px solid ${RULE};border-bottom:1px solid ${RULE};padding:28px 0;">
+        <div style="font-family:${MONO};font-size:9px;letter-spacing:0.26em;text-transform:uppercase;color:${GREY};padding-bottom:12px;">
+          The Experience
+        </div>
+        <div style="font-family:${SANS};font-weight:800;font-size:24px;line-height:1.05;letter-spacing:-0.02em;text-transform:uppercase;color:${BLACK};">
+          7 Days. One Experience.
+        </div>
+        <div style="font-family:${MONO};font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:${GREY};padding-top:14px;">
+          Calicut &nbsp;&bull;&nbsp; Kerala
+        </div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td style="padding:4px 44px 48px;">
+      <div style="font-family:${MONO};font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:${GREY};">
+        &mdash;&nbsp; Studio Wytes&trade;
+      </div>
+    </td>
+  </tr>`;
+
+  return shell(inner);
 }

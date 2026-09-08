@@ -4,6 +4,7 @@ import { z } from "zod";
  * Shared validation schema for THE CREW application form.
  * Used on both the client (React Hook Form + zodResolver) and the
  * server (app/api/applications/route.ts) so the rules can never drift.
+ * A submission that passes is emailed to the studio — there is no database.
  */
 
 const optionalUrl = z
@@ -66,20 +67,3 @@ export const applicationSchema = z.object({
 });
 
 export type ApplicationInput = z.infer<typeof applicationSchema>;
-
-/** Maps camelCase form fields to the snake_case columns in Supabase. */
-export function toApplicationRecord(input: ApplicationInput) {
-  return {
-    full_name: input.fullName,
-    email: input.email.toLowerCase(),
-    phone: input.phone,
-    city: input.city,
-    role: input.role,
-    portfolio_url: input.portfolioUrl || null,
-    social_url: input.socialUrl || null,
-    why_join: input.whyJoin,
-    skills: input.skills || null,
-    availability: input.availability || null,
-    status: "pending" as const,
-  };
-}

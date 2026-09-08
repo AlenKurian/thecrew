@@ -16,47 +16,45 @@ A production-quality landing page + application flow for **THE CREW**, a
 - **GSAP + ScrollTrigger** — scroll-based reveals, marquee, hover previews
 - **Lenis** — smooth scrolling, wired into GSAP's ticker
 - **React Hook Form + Zod** — client-side validated application form
-- **Supabase (Postgres)** — application storage, accessed only from the
-  server via Route Handlers
-- Email hook stubbed for **Resend** (optional, see `app/api/applications/route.ts`)
+- **Nodemailer + Gmail SMTP** — application submissions are emailed to a
+  Gmail inbox. No database: the API route validates the payload
+  server-side and sends it on.
 
 ## Getting started
 
 ```bash
 npm install
 cp .env.local.example .env.local
-# fill in your Supabase project URL + keys
+# fill in your Gmail address + App Password
 npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Supabase setup
+## Email setup
 
-1. Create a Supabase project.
-2. Run [`supabase/schema.sql`](supabase/schema.sql) in the SQL editor —
-   this creates the `applications` table with Row Level Security enabled
-   and **no public policies**, so only the server (using the service role
-   key) can read or write.
-3. Copy your project URL, anon key, and service role key into `.env.local`:
+Submitting the application form `POST`s to `app/api/applications/route.ts`,
+which validates the data with the shared Zod schema and emails it via
+Gmail SMTP. There is no persistence — if the email doesn't send, the
+request fails so nothing is lost silently.
+
+1. Use a Gmail account with **2-Step Verification enabled**.
+2. Create an **App Password** at
+   [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
+   (choose "Mail" → "Other"). You get a 16-character password — use that,
+   not your normal Google password.
+3. Fill in `.env.local`:
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=...
-NEXT_PUBLIC_SUPABASE_ANON_KEY=...
-SUPABASE_SERVICE_ROLE_KEY=...   # server-only, never sent to the browser
+GMAIL_USER=youraccount@gmail.com
+GMAIL_APP_PASSWORD=xxxxxxxxxxxxxxxx
+STUDIO_WYTES_NOTIFY_EMAIL=team@studiowytes.com   # optional; defaults to GMAIL_USER
 ```
 
-The service role key is only ever imported in `lib/supabase.ts`, which is
-only used inside `app/api/applications/route.ts` — a server-only Route
-Handler. It is never bundled into client JavaScript.
-
-## Email (optional)
-
-`app/api/applications/route.ts` has a commented-out Resend integration.
-Add `RESEND_API_KEY` (and optionally `RESEND_FROM_EMAIL` /
-`STUDIO_WYTES_NOTIFY_EMAIL`) to `.env.local`, install `resend`, and
-uncomment the block to send a confirmation email to applicants and a
-notification email to the Studio Wytes team.
+Applications arrive at `STUDIO_WYTES_NOTIFY_EMAIL` (or the Gmail account
+itself) with the applicant set as `Reply-To`. The applicant also gets a
+short best-effort confirmation email; failure to send that never fails
+the submission.
 
 ## Project structure
 
@@ -68,17 +66,14 @@ app/
                               to — carries its own compact hero context
                               so cold traffic isn't dropped straight into
                               a bare form)
-  api/applications/route.ts → POST handler: validate → dedupe → insert
+  api/applications/route.ts → POST handler: validate → email via Resend
   layout.tsx / globals.css  → root layout, fonts, design tokens
   icon.tsx / opengraph-image.tsx → generated favicon + share image
 
 components/                 → one component per section (see spec)
 lib/
-  supabase.ts               → server-only Supabase admin client
   validation.ts              → shared Zod schema (client + server)
   utils.ts                   → cn() helper + content data (easy to edit)
-
-supabase/schema.sql          → applications table + RLS setup
 ```
 
 ## Content
