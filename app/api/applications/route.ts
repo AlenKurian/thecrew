@@ -8,15 +8,19 @@ export const runtime = "nodejs";
 /**
  * POST /api/applications
  *
- * No database. Validates the submission server-side, then emails the
- * full application to the studio Gmail inbox via Gmail SMTP, and sends
- * the applicant a branded confirmation. If mail isn't configured the
+ * No database. Validates the submission server-side, then sends two
+ * emails over SMTP: the full application to the studio inbox, and a
+ * branded confirmation to the applicant. If mail isn't configured the
  * request fails loudly so a submission is never silently lost.
  *
- * Env (see .env.local.example):
- *   GMAIL_USER          the Gmail address that sends (and receives, by default)
- *   GMAIL_APP_PASSWORD  a 16-char Google App Password (NOT the account password)
- *   STUDIO_WYTES_NOTIFY_EMAIL  optional — where applications land (defaults to GMAIL_USER)
+ * Env (see .env.local.example) — generic SMTP, works with Zoho, Gmail,
+ * Outlook, or any provider:
+ *   SMTP_HOST   e.g. smtp.zoho.com  (smtp.zoho.in / smtp.zoho.eu by region)
+ *   SMTP_PORT   465 (SSL) or 587 (STARTTLS). Defaults to 465.
+ *   SMTP_USER   the full mailbox address that authenticates & sends
+ *   SMTP_PASS   that mailbox's password, or an app-specific password if 2FA is on
+ *   MAIL_FROM   optional — the From address. Defaults to SMTP_USER.
+ *   STUDIO_WYTES_NOTIFY_EMAIL  where applications land. Defaults to SMTP_USER.
  */
 export async function POST(request: NextRequest) {
   let body: unknown;
@@ -40,13 +44,16 @@ export async function POST(request: NextRequest) {
     );
   }
 
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_APP_PASSWORD;
+  const host = process.env.SMTP_HOST;
+  const user = process.env.SMTP_USER;
+  const pass = process.env.SMTP_PASS;
+  const port = Number(process.env.SMTP_PORT) || 465;
+  const from = process.env.MAIL_FROM || user;
   const notify = process.env.STUDIO_WYTES_NOTIFY_EMAIL || user;
 
-  if (!user || !pass) {
+  if (!host || !user || !pass) {
     console.error(
-      "Mail not configured: set GMAIL_USER and GMAIL_APP_PASSWORD in .env.local."
+      "Mail not configured: set SMTP_HOST, SMTP_USER and SMTP_PASS."
     );
     return NextResponse.json(
       {
@@ -59,7 +66,9 @@ export async function POST(request: NextRequest) {
   }
 
   const transporter = nodemailer.createTransport({
-    service: "gmail",
+    host,
+    port,
+    secure: port === 465, // true for 465, false for 587 (STARTTLS)
     auth: { user, pass },
   });
 
@@ -72,7 +81,7 @@ export async function POST(request: NextRequest) {
 
   try {
     await transporter.sendMail({
-      from: `"THE CREW — Applications" <${user}>`,
+      from: `"THE CREW — Applications" <${from}>`,
       to: notify,
       replyTo: `"${data.fullName}" <${data.email}>`,
       subject: `New CREW application — ${data.fullName}`,
@@ -80,7 +89,7 @@ export async function POST(request: NextRequest) {
       html: renderStudioEmail(data, submittedAt),
     });
   } catch (err) {
-    console.error("Gmail send error:", err);
+    console.error("SMTP send error:", err);
     return NextResponse.json(
       { ok: false, error: "We couldn't send your application. Please try again." },
       { status: 502 }
@@ -90,7 +99,7 @@ export async function POST(request: NextRequest) {
   // Best-effort confirmation to the applicant — never fail the request on this.
   try {
     await transporter.sendMail({
-      from: `"STUDIO WYTES™ — THE CREW" <${user}>`,
+      from: `"STUDIO WYTES™ — THE CREW" <${from}>`,
       to: data.email,
       subject: "Application received — STUDIO WYTES™ THE CREW",
       text: confirmationPlainText(data),

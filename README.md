@@ -16,16 +16,17 @@ A production-quality landing page + application flow for **THE CREW**, a
 - **GSAP + ScrollTrigger** — scroll-based reveals, marquee, hover previews
 - **Lenis** — smooth scrolling, wired into GSAP's ticker
 - **React Hook Form + Zod** — client-side validated application form
-- **Nodemailer + Gmail SMTP** — application submissions are emailed to a
-  Gmail inbox. No database: the API route validates the payload
-  server-side and sends it on.
+- **Nodemailer + SMTP** — application submissions are emailed to the
+  studio inbox (Zoho Mail), and the applicant gets a confirmation. No
+  database: the API route validates the payload server-side and sends it
+  on.
 
 ## Getting started
 
 ```bash
 npm install
 cp .env.local.example .env.local
-# fill in your Gmail address + App Password
+# fill in your SMTP credentials
 npm run dev
 ```
 
@@ -34,27 +35,33 @@ Open [http://localhost:3000](http://localhost:3000).
 ## Email setup
 
 Submitting the application form `POST`s to `app/api/applications/route.ts`,
-which validates the data with the shared Zod schema and emails it via
-Gmail SMTP. There is no persistence — if the email doesn't send, the
-request fails so nothing is lost silently.
+which validates the data with the shared Zod schema and sends two emails
+over SMTP: the full application to the studio inbox, and a short
+confirmation to the applicant. There is no persistence — if the studio
+email doesn't send, the request fails so nothing is lost silently.
 
-1. Use a Gmail account with **2-Step Verification enabled**.
-2. Create an **App Password** at
-   [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords)
-   (choose "Mail" → "Other"). You get a 16-character password — use that,
-   not your normal Google password.
-3. Fill in `.env.local`:
+Fill in `.env.local` with SMTP credentials for the sending mailbox. For
+**Zoho Mail** (`Hello@wytes.studio`):
 
 ```
-GMAIL_USER=youraccount@gmail.com
-GMAIL_APP_PASSWORD=xxxxxxxxxxxxxxxx
-STUDIO_WYTES_NOTIFY_EMAIL=team@studiowytes.com   # optional; defaults to GMAIL_USER
+SMTP_HOST=smtp.zoho.com          # smtp.zoho.in / smtp.zoho.eu by region
+SMTP_PORT=465                     # 465 = SSL, 587 = STARTTLS
+SMTP_USER=Hello@wytes.studio
+SMTP_PASS=mailbox-or-app-password # app password if the account has 2FA on
+MAIL_FROM=Hello@wytes.studio      # optional; defaults to SMTP_USER
+STUDIO_WYTES_NOTIFY_EMAIL=Hello@wytes.studio   # optional; defaults to SMTP_USER
 ```
 
-Applications arrive at `STUDIO_WYTES_NOTIFY_EMAIL` (or the Gmail account
-itself) with the applicant set as `Reply-To`. The applicant also gets a
-short best-effort confirmation email; failure to send that never fails
-the submission.
+If the Zoho account has Two-Factor Auth enabled, generate an
+app-specific password under **Zoho Mail → Settings → Security → App
+Passwords** and use that as `SMTP_PASS`.
+
+Applications arrive at `STUDIO_WYTES_NOTIFY_EMAIL` with the applicant set
+as `Reply-To`. The applicant also gets a short best-effort confirmation
+email; failure to send that never fails the submission.
+
+These same variables must be set in the deployment host (e.g. Vercel →
+Settings → Environment Variables), then redeploy.
 
 ## Project structure
 
