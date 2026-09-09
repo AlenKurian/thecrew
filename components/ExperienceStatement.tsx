@@ -60,7 +60,7 @@ export default function ExperienceStatement() {
       ref={sectionRef}
       className="bg-ink px-4 py-16 xs:px-6 xs:py-28 sm:px-10 sm:py-40"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-8 xs:gap-16 sm:gap-24">
+      <div className="mx-auto flex max-w-6xl flex-col gap-14 xs:gap-20 sm:gap-24">
         <div className="flex flex-col">
           <span className="standard-reveal font-meta mb-3 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
             The Wytes Standard&trade;
@@ -72,7 +72,7 @@ export default function ExperienceStatement() {
             The thinking &bull; The preparation &bull; The execution &bull; The
             discipline &bull; The finish
           </p>
-          <p className="standard-reveal mt-5 text-base text-paper/80 xs:mt-6 xs:text-lg sm:text-xl">
+          <p className="standard-reveal mt-5 text-[13px] leading-relaxed text-paper/80 xs:mt-6 xs:text-lg sm:text-xl">
             It means approaching every idea with intention, every detail with
             precision, and every execution with accountability. For THE CREW&trade;,
             that standard becomes part of the experience — you won&rsquo;t simply

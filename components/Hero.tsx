@@ -58,7 +58,7 @@ export default function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative flex min-h-[95svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-32 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-36 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-24 sm:pt-32"
+      className="relative flex min-h-[95svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-16 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-20 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-24 sm:pt-32"
     >
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
@@ -79,9 +79,6 @@ export default function Hero() {
       <div className="max-w-5xl">
         <span className="hero-meta mb-4 block font-meta text-[10px] uppercase tracking-[0.25em] text-paper/60 xs:text-[11px]">
           Studio Wytes&trade; Presents
-        </span>
-        <span className="hero-meta mb-3 block font-meta text-[11px] text-paper xs:hidden">
-          The Crew
         </span>
         <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
           <span className="line-clip block">
@@ -120,7 +117,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll font-meta mt-20 flex items-center justify-end gap-2 text-[10px] text-paper/60 xs:mt-16 xs:text-[11px] sm:absolute sm:bottom-10 sm:right-10 sm:mt-0">
+      <div className="hero-scroll font-meta mt-12 flex items-center justify-end gap-2 text-[10px] text-paper/60 xs:mt-12 xs:text-[11px] sm:absolute sm:bottom-10 sm:right-10 sm:mt-0">
         <span>Scroll to enter</span>
         <span className="animate-bounce">↓</span>
       </div>
