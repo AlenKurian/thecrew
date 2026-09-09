@@ -36,7 +36,7 @@ export default function ApplicationFormSection() {
           <span className="text-[9px] font-meta text-paper xs:text-[11px]">
             The Application
           </span>
-          <h2 className="mt-2 font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[12vw] sm:text-[6vw]">
+          <h2 className="mt-2 font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[12vw] sm:text-[4vw]">
             Get in the Room.
           </h2>
           <p className="mt-2 text-[12px] leading-relaxed text-paper/70 xs:mt-4 xs:text-base sm:text-lg">

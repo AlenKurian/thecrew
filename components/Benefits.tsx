@@ -47,9 +47,7 @@ export default function Benefits() {
     >
       <div className="mb-10 flex items-start justify-between gap-6 xs:mb-14 sm:mb-16">
         <h2 className="benefits-heading font-display text-[10vw] uppercase leading-[0.95] xs:text-[11vw] sm:text-[6vw]">
-          We&rsquo;ve Got
-          <br />
-          You
+          We&rsquo;ve Got You
         </h2>
         <div className="mt-2 hidden shrink-0 flex-col gap-2 text-right sm:flex">
           <span className="h-px w-8 self-end bg-ink/30" />

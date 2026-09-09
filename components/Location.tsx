@@ -44,7 +44,7 @@ export default function Location() {
         Calicut, Kerala
       </span>
 
-      <h2 className="location-reveal relative mt-3 font-display text-[9vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[10vw] sm:mt-6 sm:text-[6vw]">
+      <h2 className="location-reveal relative mt-3 font-display text-[9vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[10vw] sm:mt-6 sm:text-[4vw]">
         Not For Everyone.<br className="sm:hidden" /> And That&rsquo;s The Point.
       </h2>
 
