@@ -60,7 +60,7 @@ export default function ExperienceStatement() {
       ref={sectionRef}
       className="bg-ink px-4 pt-16 pb-8 xs:bg-paper xs:px-6 xs:pt-28 xs:pb-12 sm:px-10 sm:pt-40 sm:pb-16"
     >
-      <div className="standard-reveal mx-auto flex w-full max-w-[110rem] flex-col gap-10 bg-ink p-0 xs:gap-20 xs:rounded-[2.5rem] xs:border xs:border-ink/10 xs:p-8 sm:gap-24 sm:p-14">
+      <div className="standard-reveal mx-auto flex w-full max-w-[110rem] flex-col gap-20 bg-ink p-0 xs:gap-20 xs:rounded-[2.5rem] xs:border xs:border-ink/10 xs:p-8 sm:gap-24 sm:p-14">
         <div className="flex flex-col items-center text-center">
           <span className="font-meta mb-2 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
             The Wytes Standard&trade;
