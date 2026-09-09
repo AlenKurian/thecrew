@@ -46,7 +46,7 @@ export default function SevenDays() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-4 py-16 text-center text-ink xs:px-6 xs:py-24 sm:py-32"
+      className="relative flex flex-col items-center justify-center overflow-hidden bg-paper px-4 pt-8 pb-8 text-center text-ink xs:px-6 xs:pt-12 xs:pb-12 sm:pt-16 sm:pb-16"
     >
       <div
         ref={numberRef}

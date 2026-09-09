@@ -58,21 +58,21 @@ export default function ExperienceStatement() {
   return (
     <section
       ref={sectionRef}
-      className="bg-ink px-4 py-16 xs:px-6 xs:py-28 sm:px-10 sm:py-40"
+      className="bg-paper px-4 pt-16 pb-8 xs:px-6 xs:pt-28 xs:pb-12 sm:px-10 sm:pt-40 sm:pb-16"
     >
-      <div className="mx-auto flex max-w-6xl flex-col gap-14 xs:gap-20 sm:gap-24">
-        <div className="flex flex-col">
-          <span className="standard-reveal font-meta mb-3 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
+      <div className="standard-reveal mx-auto flex w-full max-w-[110rem] flex-col gap-14 rounded-[2rem] border border-ink/10 bg-ink p-6 xs:gap-20 xs:rounded-[2.5rem] xs:p-8 sm:gap-24 sm:p-14">
+        <div className="flex flex-col items-center text-center">
+          <span className="font-meta mb-3 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
             The Wytes Standard&trade;
           </span>
-          <h2 className="standard-reveal font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:text-[9vw] sm:text-[3.6vw]">
+          <h2 className="font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:text-[9vw] sm:text-[3.6vw]">
             Different work. Higher expectations.
           </h2>
-          <p className="standard-reveal font-meta mt-5 text-sm uppercase tracking-wide text-paper xs:mt-6 xs:text-base">
+          <p className="font-meta mt-5 text-sm uppercase tracking-wide text-paper xs:mt-6 xs:text-base">
             The thinking &bull; The preparation &bull; The execution &bull; The
             discipline &bull; The finish
           </p>
-          <p className="standard-reveal mt-5 text-[13px] leading-relaxed text-paper/80 xs:mt-6 xs:text-lg sm:text-xl">
+          <p className="mt-5 max-w-3xl text-[13px] leading-relaxed text-paper/80 xs:mt-6 xs:text-lg sm:text-lg">
             It means approaching every idea with intention, every detail with
             precision, and every execution with accountability. For THE CREW&trade;,
             that standard becomes part of the experience — you won&rsquo;t simply
@@ -81,33 +81,30 @@ export default function ExperienceStatement() {
           </p>
         </div>
 
-        <div className="flex flex-col">
-          <p className="standard-reveal font-display text-[7vw] uppercase leading-[0.95] text-paper xs:text-[7.5vw] sm:text-[3vw]">
+        <div className="flex flex-col items-center text-center">
+          <p className="font-display text-[7vw] uppercase leading-[0.95] text-paper xs:text-[7.5vw] sm:text-[3vw]">
             Think beyond ordinary.
           </p>
-          <span className="standard-reveal font-meta mt-4 block text-[10px] uppercase tracking-wide text-paper/60 xs:text-[11px]">
+          <span className="font-meta mt-4 block text-[10px] uppercase tracking-wide text-paper/60 xs:text-[11px]">
             The Wytes Standard&trade; is built on
           </span>
-          <ol className="mt-6 grid gap-x-8 gap-y-6 sm:grid-cols-2 sm:mt-8">
+          <ol className="mt-6 grid w-full max-w-4xl gap-x-8 gap-y-6 sm:grid-cols-2 sm:mt-8">
             {principles.map((p, i) => (
-              <li key={p.title} className="standard-reveal flex gap-3">
+              <li key={p.title} className="flex flex-col items-center text-center">
                 <span className="font-display text-lg text-paper/40 xs:text-xl">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="flex flex-col">
+                <span className="mt-1 flex flex-col items-center">
                   <span className="font-meta text-sm uppercase tracking-wide text-paper xs:text-base">
                     {p.title}
                   </span>
-                  <span className="mt-1 text-sm text-paper/70 xs:text-base">
+                  <span className="mt-1 max-w-[34ch] text-pretty text-sm leading-relaxed text-paper/70 [text-wrap:balance] xs:text-base">
                     {p.body}
                   </span>
                 </span>
               </li>
             ))}
           </ol>
-          <span className="standard-reveal font-meta mt-8 block text-[10px] uppercase tracking-wide text-paper/60 xs:text-[11px]">
-            THE CREW&trade; — STUDIO WYTES&trade;
-          </span>
         </div>
       </div>
     </section>

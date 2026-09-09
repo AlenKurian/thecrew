@@ -33,7 +33,7 @@ export default function ApplicationCTA() {
   return (
     <section
       ref={sectionRef}
-      className="flex flex-col items-center justify-center bg-paper px-4 py-16 text-center text-ink xs:px-6 xs:py-28 sm:py-40"
+      className="flex flex-col items-center justify-center bg-paper px-4 pt-16 pb-8 text-center text-ink xs:px-6 xs:pt-28 xs:pb-12 sm:pt-40 sm:pb-16"
     >
       <h2 className="cta-reveal font-display text-[9.5vw] uppercase leading-[0.95] xs:text-[11vw] sm:text-[6.5vw]">
         Ready to Get

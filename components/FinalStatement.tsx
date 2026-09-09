@@ -42,8 +42,9 @@ export default function FinalStatement() {
   return (
     <section
       ref={sectionRef}
-      className="flex min-h-[60vh] flex-col items-center justify-center bg-ink px-4 py-20 text-center xs:px-6 xs:py-28 sm:py-40"
+      className="bg-paper px-4 py-16 xs:px-6 xs:py-24 sm:px-10 sm:py-32"
     >
+      <div className="mx-auto flex min-h-[60vh] w-full max-w-[110rem] flex-col items-center justify-center rounded-[2rem] border border-ink/10 bg-ink px-4 py-20 text-center xs:rounded-[2.5rem] xs:px-6 xs:py-28 sm:px-14 sm:py-40">
       <h2 className="font-display leading-[0.95]">
         <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[6vw]">
           Come Curious.
@@ -77,6 +78,7 @@ export default function FinalStatement() {
             </li>
           ))}
         </ul>
+      </div>
       </div>
     </section>
   );

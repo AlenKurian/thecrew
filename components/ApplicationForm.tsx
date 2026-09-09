@@ -229,22 +229,24 @@ export default function ApplicationForm() {
             </div>
           )}
 
-          <button
-            type="submit"
-            disabled={isSubmitting}
-            className="group mt-8 inline-flex w-full items-center justify-center gap-2 bg-paper px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper/80 disabled:cursor-not-allowed disabled:opacity-60 xs:text-sm sm:w-auto sm:px-14"
-          >
-            {isSubmitting
-              ? "Submitting…"
-              : state === "error"
-                ? "Try Again"
-                : "Submit Application"}
-            {!isSubmitting && (
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            )}
-          </button>
+          <div className="mt-8 flex justify-center">
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className="group inline-flex w-full items-center justify-center gap-2 bg-paper px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper/80 disabled:cursor-not-allowed disabled:opacity-60 xs:text-sm sm:w-auto sm:px-14"
+            >
+              {isSubmitting
+                ? "Submitting…"
+                : state === "error"
+                  ? "Try Again"
+                  : "Submit Application"}
+              {!isSubmitting && (
+                <span className="transition-transform duration-300 group-hover:translate-x-1">
+                  →
+                </span>
+              )}
+            </button>
+          </div>
 
           <p className="mt-8 text-center text-xs text-paper/40 xs:text-sm">
             Selective applications. Limited positions. Further details will be

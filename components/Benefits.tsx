@@ -43,7 +43,7 @@ export default function Benefits() {
   return (
     <section
       ref={sectionRef}
-      className="bg-paper px-4 py-16 text-ink xs:px-6 xs:py-24 sm:px-10 sm:py-32"
+      className="bg-paper px-4 pt-8 pb-16 text-ink xs:px-6 xs:pt-12 xs:pb-24 sm:px-10 sm:pt-16 sm:pb-32"
     >
       <div className="mb-10 flex items-start justify-between gap-6 xs:mb-14 sm:mb-16">
         <h2 className="benefits-heading font-display text-[10vw] uppercase leading-[0.95] xs:text-[11vw] sm:text-[6vw]">

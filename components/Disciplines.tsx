@@ -28,17 +28,21 @@ export default function Disciplines() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-ink">
-      <span className="mb-6 block px-4 pt-16 text-[10px] font-meta text-paper/60 xs:px-6 xs:pt-24 xs:text-[11px] sm:px-10 sm:pt-32 sm:mb-16">
-        You&rsquo;ll Get Close To
-      </span>
+    <section
+      ref={sectionRef}
+      className="bg-paper px-4 pt-8 pb-8 xs:px-6 xs:pt-12 xs:pb-12 sm:px-10 sm:pt-16 sm:pb-16"
+    >
+      <div className="mx-auto w-full max-w-[110rem] overflow-hidden rounded-[2rem] border border-ink/10 bg-ink xs:rounded-[2.5rem]">
+        <span className="block px-4 pt-10 pb-6 text-[10px] font-meta text-paper/60 xs:px-8 xs:pt-14 xs:text-[11px] sm:px-14 sm:pt-16 sm:pb-10">
+          You&rsquo;ll Get Close To
+        </span>
 
-      {disciplines.map((item, i) => (
+        {disciplines.map((item, i) => (
         <div
           key={item.title}
-          className={`discipline-card flex flex-col border-t border-paper/15 xs:flex-row ${
-            i % 2 === 1 ? "xs:flex-row-reverse" : ""
-          }`}
+          className={`discipline-card flex flex-col xs:flex-row ${
+            i > 0 ? "border-t border-paper/15" : ""
+          } ${i % 2 === 1 ? "xs:flex-row-reverse" : ""}`}
         >
           <div className="relative min-h-[180px] w-full overflow-hidden xs:min-h-[420px] xs:w-1/2">
             <Image
@@ -74,7 +78,8 @@ export default function Disciplines() {
             </p>
           </div>
         </div>
-      ))}
+        ))}
+      </div>
     </section>
   );
 }
