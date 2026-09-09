@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
 import WhoItsFor from "@/components/WhoItsFor";
+import WytesStandard from "@/components/WytesStandard";
 import ExperienceStatement from "@/components/ExperienceStatement";
 import SevenDays from "@/components/SevenDays";
 import Disciplines from "@/components/Disciplines";
@@ -21,6 +22,7 @@ export default function Home() {
         <Hero />
         <Marquee />
         <WhoItsFor />
+        <WytesStandard />
         <ExperienceStatement />
         <SevenDays />
         <Disciplines />

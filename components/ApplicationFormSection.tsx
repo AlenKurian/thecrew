@@ -29,9 +29,9 @@ export default function ApplicationFormSection() {
     <section
       id="apply"
       ref={sectionRef}
-      className="scroll-mt-24 bg-ink px-4 pt-8 pb-16 xs:bg-paper xs:px-6 xs:pt-12 xs:pb-24 sm:px-10 sm:pt-16 sm:pb-32"
+      className="scroll-mt-24 bg-ink px-4 pt-8 pb-16 xs:px-6 xs:pt-12 xs:pb-24 sm:px-10 sm:pt-16 sm:pb-32"
     >
-      <div className="mx-auto w-full max-w-[110rem] bg-ink p-0 xs:rounded-[2.5rem] xs:border xs:border-ink/10 xs:p-10 sm:p-14">
+      <div className="mx-auto w-full max-w-[110rem] bg-ink">
         <div className="apply-heading">
           <span className="text-[9px] font-meta text-paper xs:text-[11px]">
             The Application

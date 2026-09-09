@@ -58,29 +58,9 @@ export default function ExperienceStatement() {
   return (
     <section
       ref={sectionRef}
-      className="bg-ink px-4 pt-16 pb-8 xs:bg-paper xs:px-6 xs:pt-28 xs:pb-12 sm:px-10 sm:pt-40 sm:pb-16"
+      className="bg-ink px-4 pt-16 pb-8 xs:px-6 xs:pt-28 xs:pb-12 sm:px-10 sm:pt-40 sm:pb-16"
     >
-      <div className="standard-reveal mx-auto flex w-full max-w-[110rem] flex-col gap-20 bg-ink p-0 xs:gap-20 xs:rounded-[2.5rem] xs:border xs:border-ink/10 xs:p-8 sm:gap-24 sm:p-14">
-        <div className="flex flex-col items-center text-center">
-          <span className="font-meta mb-2 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
-            The Wytes Standard&trade;
-          </span>
-          <h2 className="font-display text-[7.5vw] uppercase leading-[0.95] text-paper xs:text-[8vw] sm:text-[3.6vw]">
-            Different work. Higher expectations.
-          </h2>
-          <p className="font-meta mt-3 text-[10px] uppercase tracking-wide text-paper xs:mt-6 xs:text-sm sm:text-base">
-            The thinking &bull; The preparation &bull; The execution &bull; The
-            discipline &bull; The finish
-          </p>
-          <p className="mt-3 max-w-3xl text-[12px] leading-relaxed text-paper/80 xs:mt-6 xs:text-base sm:text-lg">
-            It means approaching every idea with intention, every detail with
-            precision, and every execution with accountability. For THE CREW&trade;,
-            that standard becomes part of the experience — you won&rsquo;t simply
-            be shown how things are done, you&rsquo;ll experience the standard
-            behind how we do them.
-          </p>
-        </div>
-
+      <div className="standard-reveal mx-auto flex w-full max-w-[110rem] flex-col bg-ink">
         <div className="flex flex-col sm:items-center sm:text-center">
           <p className="font-display text-center text-[7.5vw] uppercase leading-[0.95] text-paper xs:text-[7vw] sm:text-[3vw]">
             Think beyond ordinary.

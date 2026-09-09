@@ -42,9 +42,9 @@ export default function FinalStatement() {
   return (
     <section
       ref={sectionRef}
-      className="bg-ink px-4 py-16 xs:bg-paper xs:px-6 xs:py-24 sm:px-10 sm:py-32"
+      className="bg-ink px-4 py-16 xs:px-6 xs:py-24 sm:px-10 sm:py-32"
     >
-      <div className="mx-auto flex min-h-[60vh] w-full max-w-[110rem] flex-col items-center justify-center bg-ink px-0 py-0 text-center xs:rounded-[2.5rem] xs:border xs:border-ink/10 xs:px-6 xs:py-28 sm:px-14 sm:py-40">
+      <div className="mx-auto flex min-h-[60vh] w-full max-w-[110rem] flex-col items-center justify-center bg-ink px-0 text-center xs:px-6 sm:px-14">
       <h2 className="font-display leading-[0.95]">
         <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[4vw]">
           Come Curious.
