@@ -58,11 +58,11 @@ export default function Disciplines() {
           </div>
 
           <div className="flex w-full flex-col justify-center px-3 py-5 xs:w-1/2 xs:px-8 xs:py-12 sm:px-14 sm:py-16">
-            <div className="mb-2 flex items-center gap-2 xs:mb-6 xs:gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-paper/40 font-meta text-[9px] text-paper xs:h-11 xs:w-11 xs:text-xs">
+            <div className="mb-2 flex items-center gap-3 xs:mb-6 xs:gap-4">
+              <span className="font-meta shrink-0 text-xs leading-none tracking-[0.2em] text-paper/30 xs:text-sm sm:text-base">
                 {item.number}
               </span>
-              <span className="h-px flex-1 bg-paper/30" />
+              <span className="h-px flex-1 bg-paper/15" />
             </div>
 
             <h3 className="font-sans text-[6vw] font-semibold uppercase leading-[0.9] text-paper xs:text-[6vw] sm:text-[3vw] lg:text-[2.2vw]">

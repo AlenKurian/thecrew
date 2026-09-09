@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
 import { included } from "@/lib/utils";
 import BenefitIcon from "./BenefitIcon";
+import NumberedRow from "./NumberedRow";
 
 export default function Benefits() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -65,38 +66,24 @@ export default function Benefits() {
         </div>
       </div>
 
-      <ul className="flex flex-col gap-4 xs:gap-5">
+      <div className="border-b border-ink/15">
         {included.map((item) => (
-          <li
+          <NumberedRow
             key={item.title}
-            className="benefit-item relative flex min-h-[96px] items-stretch overflow-hidden rounded-[2rem] border border-ink/10 bg-paper xs:min-h-[130px] xs:rounded-[2.5rem] sm:min-h-[150px]"
-          >
-            <span className="flex shrink-0 items-center px-4 font-display text-xl text-ink/30 xs:px-6 xs:text-2xl sm:px-8 sm:text-4xl">
-              {item.number}
-            </span>
-            <span className="w-px shrink-0 self-center bg-ink/15" style={{ height: "60%" }} />
-            <div
-              className="relative flex shrink-0 items-center justify-center bg-ink/5 px-5 xs:px-8 sm:px-10"
-              style={{
-                clipPath: "polygon(0 0, 85% 0, 100% 50%, 85% 100%, 0 100%)",
-              }}
-            >
+            className="benefit-item"
+            tone="onPaper"
+            number={item.number}
+            title={item.title}
+            description={item.description}
+            media={
               <BenefitIcon
                 name={item.icon}
-                className="h-7 w-7 text-ink xs:h-8 xs:w-8 sm:h-10 sm:w-10"
+                className="h-7 w-7 text-ink xs:h-8 xs:w-8 sm:h-9 sm:w-9"
               />
-            </div>
-            <div className="flex min-w-0 flex-1 flex-col justify-center gap-1 px-5 xs:px-8 sm:px-10">
-              <span className="font-display text-lg uppercase leading-tight xs:text-[4.5vw] sm:text-[2.2vw]">
-                {item.title}
-              </span>
-              <span className="text-xs text-ink/60 xs:text-sm">
-                {item.description}
-              </span>
-            </div>
-          </li>
+            }
+          />
         ))}
-      </ul>
+      </div>
 
       <div className="mt-10 flex items-center justify-between gap-6 xs:mt-14 sm:mt-16">
         <div className="flex flex-col gap-2">

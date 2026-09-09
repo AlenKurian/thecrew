@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
 import { audience, whoItsForDetails } from "@/lib/utils";
+import NumberedRow from "./NumberedRow";
 
 /**
  * Three horizontal rows of tiles, each scrolling continuously in the
@@ -177,19 +178,15 @@ export default function WhoItsFor() {
         </div>
       </div>
 
-      <div className="relative mt-12 grid grid-cols-1 gap-3 xs:mt-16 xs:gap-4 sm:mt-24 sm:grid-cols-2 sm:gap-5">
-        {whoItsForDetails.map((item) => (
-          <div
+      <div className="relative mt-12 border-b border-paper/15 xs:mt-16 sm:mt-24">
+        {whoItsForDetails.map((item, i) => (
+          <NumberedRow
             key={item.label}
-            className="who-row border border-paper/15 px-4 py-4 xs:px-6 xs:py-5"
-          >
-            <span className="font-display text-sm uppercase text-paper xs:text-base">
-              {item.label}
-            </span>
-            <span className="ml-2 text-xs text-paper/70 xs:text-sm">
-              — {item.description}
-            </span>
-          </div>
+            className="who-row"
+            number={String(i + 1).padStart(2, "0")}
+            title={item.label}
+            description={item.description}
+          />
         ))}
       </div>
     </section>
