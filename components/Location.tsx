@@ -45,8 +45,10 @@ export default function Location() {
       </span>
 
       <h2 className="location-reveal relative mt-3 font-display text-[7.5vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[8.3vw] sm:mt-6 sm:text-[3.3vw]">
-        Not For Everyone.<br className="sm:hidden" />{" "}
-        <span className="text-muted">And That&rsquo;s The Point.</span>
+        Not For Everyone.{" "}
+        <span className="mt-2 block text-muted xs:mt-3 sm:mt-0 sm:inline">
+          And That&rsquo;s The Point.
+        </span>
       </h2>
 
       <p className="location-reveal relative mx-auto mt-5 max-w-xl text-sm leading-relaxed text-paper/70 xs:mt-6 sm:text-base">

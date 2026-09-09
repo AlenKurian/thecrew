@@ -37,8 +37,7 @@ export default function ApplicationCTA() {
     >
       <h2 className="cta-reveal font-display text-[8vw] uppercase leading-[0.95] xs:text-[9vw] sm:text-[5.4vw]">
         Ready to Get
-        <br />
-        <span className="text-muted">In the Room?</span>
+        <span className="mt-2 block text-muted xs:mt-3 sm:mt-1">In the Room?</span>
       </h2>
 
       <p className="cta-reveal mt-4 max-w-2xl text-sm font-medium xs:mt-6 xs:text-base sm:mt-8 sm:text-xl">

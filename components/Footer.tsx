@@ -5,10 +5,10 @@ export default function Footer() {
         Studio Wytes<sup className="relative top-[0.5em] align-top text-[0.4em]">™</sup>
       </h2>
 
-      <p className="mt-3 max-w-md font-display text-[4.2vw] uppercase leading-[1.1] text-ink/70 xs:mt-4 xs:text-[4.2vw] sm:text-xl">
+      <p className="mt-3 max-w-md font-display text-[4.2vw] uppercase leading-[1.1] text-muted xs:mt-4 xs:text-[4.2vw] sm:text-xl">
         Create the experience.
         <br />
-        <span className="text-muted">Become part of the story.</span>
+        Become part of the story.
       </p>
 
       <div className="mt-6 flex flex-col gap-6 xs:mt-8 xs:gap-8 sm:mt-10 sm:flex-row sm:items-end sm:justify-between">

@@ -49,7 +49,7 @@ export default function FinalStatement() {
         <span className="final-line block text-[9vw] uppercase text-paper xs:text-[10.8vw] sm:text-[3.3vw]">
           Come Curious.
         </span>
-        <span className="final-line block text-[9vw] uppercase text-muted xs:text-[10.8vw] sm:text-[4.2vw]">
+        <span className="final-line mt-2 block text-[9vw] uppercase text-muted xs:mt-3 sm:mt-0 sm:text-[4.2vw]">
           Leave Connected.
         </span>
       </h2>

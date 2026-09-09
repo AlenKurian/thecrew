@@ -39,7 +39,7 @@ export default function WytesStandard() {
         </span>
         <h2 className="font-display text-[6.2vw] uppercase leading-[0.95] text-ink xs:text-[6.7vw] sm:text-[3vw]">
           Different work.{" "}
-          <span className="mt-1 block text-muted sm:mt-0 sm:inline">
+          <span className="mt-2.5 block text-muted xs:mt-3 sm:mt-0 sm:inline">
             Higher expectations.
           </span>
         </h2>
