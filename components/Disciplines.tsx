@@ -29,7 +29,7 @@ export default function Disciplines() {
 
   return (
     <section ref={sectionRef} className="bg-ink">
-      <span className="mb-6 block px-4 pt-16 text-[10px] font-meta text-paper/60 xs:px-6 xs:pt-24 xs:text-[11px] sm:px-10 sm:pt-32 sm:mb-16">
+      <span className="mb-4 block px-4 pt-12 text-[9px] font-meta text-paper/60 xs:px-6 xs:pt-24 xs:text-[11px] sm:px-10 sm:pt-32 sm:mb-16">
         You&rsquo;ll Get Close To
       </span>
 
@@ -40,7 +40,7 @@ export default function Disciplines() {
             i % 2 === 1 ? "xs:flex-row-reverse" : ""
           }`}
         >
-          <div className="relative min-h-[180px] w-full overflow-hidden xs:min-h-[420px] xs:w-1/2">
+          <div className="relative min-h-[130px] w-full overflow-hidden xs:min-h-[420px] xs:w-1/2">
             <Image
               src={item.image}
               alt={`${item.title} at Studio Wytes`}
@@ -65,11 +65,11 @@ export default function Disciplines() {
               <span className="h-px flex-1 bg-paper/30" />
             </div>
 
-            <h3 className="font-sans text-[6vw] font-semibold uppercase leading-[0.9] text-paper xs:text-[6vw] sm:text-[3vw] lg:text-[2.2vw]">
+            <h3 className="font-sans text-[5vw] font-semibold uppercase leading-[0.9] text-paper xs:text-[6vw] sm:text-[3vw] lg:text-[2.2vw]">
               {item.title}
             </h3>
 
-            <p className="mt-2 max-w-sm text-xs text-paper/70 xs:mt-5 xs:text-base">
+            <p className="mt-2 max-w-sm text-[11px] leading-relaxed text-paper/70 xs:mt-5 xs:text-base">
               {item.description}
             </p>
           </div>

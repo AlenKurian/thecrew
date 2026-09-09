@@ -142,11 +142,11 @@ export default function WhoItsFor() {
       </div>
 
       <div className="relative flex flex-col sm:flex-row sm:items-center sm:gap-10 lg:gap-16">
-        <div className="px-0 xs:px-1 sm:w-2/5 sm:shrink-0 sm:px-5">
+        <div className="px-0 text-center xs:px-1 sm:w-2/5 sm:shrink-0 sm:px-5 sm:text-left">
           <span className="who-heading-reveal font-meta mb-3 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
             The Room Is For
           </span>
-          <h2 className="who-heading-reveal max-w-xl font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:text-[9vw] sm:text-[3.6vw]">
+          <h2 className="who-heading-reveal mx-auto max-w-xl font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:text-[9vw] sm:mx-0 sm:text-[3.6vw]">
             People who&rsquo;d rather be in it than read about it.
           </h2>
         </div>
