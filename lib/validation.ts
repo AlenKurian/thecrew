@@ -49,21 +49,15 @@ export const applicationSchema = z.object({
   role: z
     .string()
     .trim()
-    .min(2, "Tell us what you do")
+    .min(2, "Tell us your role or profession")
     .max(120, "Keep it under 120 characters"),
   whyJoin: z
     .string()
     .trim()
-    .min(40, "Give us at least 40 characters — we want to know you")
+    .min(2, "Tell us what drives you to create")
     .max(1200, "Keep it under 1200 characters"),
   portfolioUrl: optionalUrl,
-  socialUrl: optionalUrl,
   skills: z.string().trim().max(300, "Keep it under 300 characters").optional(),
-  availability: z
-    .string()
-    .trim()
-    .max(200, "Keep it under 200 characters")
-    .optional(),
 });
 
 export type ApplicationInput = z.infer<typeof applicationSchema>;

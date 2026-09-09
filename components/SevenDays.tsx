@@ -50,7 +50,7 @@ export default function SevenDays() {
     >
       <div
         ref={numberRef}
-        className="font-display leading-none text-[50vw] text-ink xs:text-[55vw] sm:text-[38vw] lg:text-[30vw]"
+        className="font-display leading-none text-[50vw] text-ink xs:text-[55vw] sm:text-[38vw] lg:text-[25vw]"
         aria-hidden="true"
       >
         07
@@ -59,11 +59,27 @@ export default function SevenDays() {
         Days
       </span>
 
-      <p className="seven-copy mt-6 max-w-lg text-base text-ink/80 xs:mt-10 xs:text-lg sm:mt-14 sm:text-2xl">
+      <p className="seven-copy mt-6 max-w-lg text-base text-ink/80 xs:mt-10 xs:text-lg sm:mt-14 sm:text-lg">
         For 7 days, you&rsquo;ll work alongside the Studio Wytes team and
         experience what it takes to build, produce, and execute a live event
         from the inside.
       </p>
+
+      <div className="seven-copy mt-10 max-w-4xl xs:mt-14 sm:mt-20">
+        <h3 className="font-display text-2xl uppercase text-ink xs:text-3xl sm:text-4xl">
+          Where the real work happens
+        </h3>
+        <p className="mt-4 text-base text-ink/80 xs:text-lg sm:mt-6 sm:text-xl">
+          Forget passive learning. Forget theory without execution. THE CREW&trade;
+          puts you closer to the decisions, pressure, creativity, systems, and
+          people behind real-world production. You&rsquo;ll collaborate across
+          disciplines, contribute to active work, solve problems in real time,
+          and experience what it takes to move an idea from concept to execution.
+        </p>
+        <p className="font-meta mt-6 text-sm uppercase tracking-wide text-ink xs:text-base sm:mt-8">
+          Real people &bull; Real deadlines &bull; Real pressure &bull; Real responsibility
+        </p>
+      </div>
     </section>
   );
 }

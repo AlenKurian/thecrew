@@ -10,7 +10,7 @@ export const audience = [
   "Creators",
   "Marketers",
   "Storytellers",
-  "Event Enthusiasts",
+  "Event Professionals",
   "Young Professionals",
   "Entrepreneurs",
 ];
@@ -18,23 +18,41 @@ export const audience = [
 export const disciplines = [
   {
     number: "01",
+    title: "Creative",
+    description: "Ideas, concepts, visual thinking & storytelling.",
+    image: "/images/creative.png",
+  },
+  {
+    number: "02",
     title: "Production",
     description: "Planning, coordination, execution & behind-the-scenes.",
     image:
       "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    number: "02",
+    number: "03",
     title: "Events",
     description: "Live experiences, timelines, people & moving parts.",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop",
   },
   {
-    number: "03",
+    number: "04",
+    title: "Media",
+    description: "Photography, videography, content & digital storytelling.",
+    image: "/images/medi.png",
+  },
+  {
+    number: "05",
     title: "Marketing",
     description: "Brand communication, audience thinking & campaigns.",
     image: "/images/market.png",
+  },
+  {
+    number: "06",
+    title: "Operations",
+    description: "Systems, coordination & precision behind the scene.",
+    image: "/images/operatio.png",
   },
 ];
 
@@ -77,14 +95,63 @@ export const included = [
   },
 ] as const;
 
-export const whoItsForDetails = [
-  { label: "Students", description: "Ready to step beyond the classroom." },
-  { label: "Creators", description: "Turning raw ideas into reality." },
-  { label: "Marketers", description: "Understanding brand experiences." },
-  { label: "Storytellers", description: "Thinking in visuals & narratives." },
+export const whatYouTakeWithYou = [
   {
-    label: "Event Enthusiasts",
-    description: "Experiencing live execution.",
+    label: "Experience",
+    description: "Real exposure to creative production and execution.",
   },
-  { label: "Entrepreneurs", description: "Learning fast in action." },
+  {
+    label: "Perspective",
+    description: "A deeper understanding of multidisciplinary work.",
+  },
+  {
+    label: "Connections",
+    description:
+      "Relationships with ambitious people across creative and business communities.",
+  },
+  {
+    label: "Confidence",
+    description: "The ability to communicate, collaborate, contribute, and execute.",
+  },
+  {
+    label: "The Wytes Standard™",
+    description: "A stronger understanding of what professional creative work demands.",
+  },
+  {
+    label: "Recognition",
+    description: "Official recognition of your participation and contribution.",
+  },
+];
+
+export const whoItsForDetails = [
+  {
+    label: "Students",
+    description: "Move beyond the classroom and into real-world creative environments.",
+  },
+  {
+    label: "Creators",
+    description: "Turn imagination into meaningful execution.",
+  },
+  {
+    label: "Storytellers",
+    description: "Build narratives that connect, move, and endure.",
+  },
+  {
+    label: "Marketers",
+    description: "Understand brands beyond campaigns.",
+  },
+  {
+    label: "Event Professionals",
+    description: "Experience the precision behind memorable moments.",
+  },
+  {
+    label: "Young Professionals",
+    description:
+      "Expand your perspective, capabilities, and professional network.",
+  },
+  {
+    label: "Entrepreneurs",
+    description:
+      "Understand how ideas, teams, brands, and experiences come together.",
+  },
 ];

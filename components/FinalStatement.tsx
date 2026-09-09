@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
+import { whatYouTakeWithYou } from "@/lib/utils";
 
 export default function FinalStatement() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -21,6 +22,19 @@ export default function FinalStatement() {
           scrollTrigger: { trigger: sectionRef.current, start: "top 65%" },
         }
       );
+
+      gsap.fromTo(
+        ".take-item",
+        { opacity: 0, y: 16 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power3.out",
+          stagger: 0.08,
+          scrollTrigger: { trigger: sectionRef.current, start: "top 50%" },
+        }
+      );
     }, sectionRef);
     return () => ctx.revert();
   }, []);
@@ -31,10 +45,10 @@ export default function FinalStatement() {
       className="flex min-h-[60vh] flex-col items-center justify-center bg-ink px-4 py-20 text-center xs:px-6 xs:py-28 sm:py-40"
     >
       <h2 className="font-display leading-[0.95]">
-        <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[8vw]">
+        <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[6vw]">
           Come Curious.
         </span>
-        <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[8vw]">
+        <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[7vw]">
           Leave Connected.
         </span>
       </h2>
@@ -43,6 +57,27 @@ export default function FinalStatement() {
         Seven days can change who you know, what you know, and how you see
         the work.
       </p>
+
+      <div className="final-line mt-14 w-full max-w-3xl xs:mt-16 sm:mt-20">
+        <span className="font-meta mb-6 block text-[10px] text-paper/50 xs:mb-8 xs:text-[11px]">
+          What You Take With You
+        </span>
+        <ul className="flex flex-col divide-y divide-paper/15 border-t border-paper/15">
+          {whatYouTakeWithYou.map((item) => (
+            <li
+              key={item.label}
+              className="take-item flex flex-col gap-1 py-4 text-left xs:flex-row xs:items-baseline xs:gap-6 xs:py-5"
+            >
+              <span className="font-display shrink-0 text-base uppercase text-crew-orange xs:w-48 xs:text-lg">
+                {item.label}
+              </span>
+              <span className="text-sm text-paper/70 xs:text-base">
+                {item.description}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </section>
   );
 }

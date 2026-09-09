@@ -27,7 +27,7 @@ const rows: Tile[][] = [
   ],
   [
     { label: audience[3] }, // Storytellers
-    { label: audience[4] }, // Event Enthusiasts
+    { label: audience[4] }, // Event Professionals
     { label: audience[5] }, // Young Professionals
   ],
   [

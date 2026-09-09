@@ -2,12 +2,13 @@ import type { ReactNode } from "react";
 
 const ITEMS: ReactNode[] = [
   <>
-    STUDIO WYTES<sup className="relative top-[0.5em] align-top text-[0.4em]">™</sup>
+    STUDIO WYTES<sup className="relative -top-[0.6em] align-top text-[0.4em]">™</sup>
   </>,
-  "THE CREW",
-  "CALICUT",
-  "7 DAYS",
   "GET IN THE ROOM",
+  "7 DAYS",
+  <>
+    THE CREW<sup className="relative -top-[0.6em] align-top text-[0.4em]">™</sup>
+  </>,
 ];
 
 export default function Marquee() {

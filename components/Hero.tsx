@@ -58,7 +58,7 @@ export default function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative flex min-h-[95svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-24 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-28 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-14 sm:pt-32"
+      className="relative flex min-h-[95svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-32 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-36 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-24 sm:pt-32"
     >
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
@@ -77,31 +77,34 @@ export default function Hero() {
 
       {/* Main headline */}
       <div className="max-w-5xl">
+        <span className="hero-meta mb-4 block font-meta text-[10px] uppercase tracking-[0.25em] text-paper/60 xs:text-[11px]">
+          Studio Wytes&trade; Presents
+        </span>
         <span className="hero-meta mb-3 block font-meta text-[11px] text-paper xs:hidden">
           The Crew
         </span>
         <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
           <span className="line-clip block">
             <span className="hero-line block text-[12vw] xs:text-[14vw] sm:text-[9vw] lg:text-[7.5vw]">
-              7 DAYS.
+              THE CREW&trade;
             </span>
           </span>
-          <span className="line-clip block">
-            <span className="hero-line block text-[12vw] xs:text-[14vw] sm:text-[9vw] lg:text-[7.5vw]">
-              ONE EXPERIENCE.
-            </span>
-          </span>
-          <span className="line-clip block">
+          <span className="line-clip mt-4 block xs:mt-6 sm:mt-8">
             <span className="hero-line block text-paper text-[10.5vw] xs:text-[12.5vw] sm:text-[8.5vw] lg:text-[7vw]">
               A ROOM FULL OF POSSIBILITY.
             </span>
           </span>
         </h1>
 
-        <p className="hero-sub mt-6 max-w-md text-sm text-paper/85 xs:mt-4 xs:text-base sm:mt-8 sm:text-lg">
-          We&rsquo;re looking for people who want to be in the room where it
-          happens.
-        </p>
+        <div className="hero-sub mt-6 max-w-xl xs:mt-4 sm:mt-8">
+          <p className="text-base font-semibold text-paper xs:text-lg sm:text-xl">
+            Some people attend experiences. Others build them.
+          </p>
+          <p className="mt-3 text-sm text-paper/85 xs:text-base sm:text-lg">
+            THE CREW&trade; is an immersive creative experience for ambitious minds
+            ready to move beyond observation and step directly into the work.
+          </p>
+        </div>
 
         <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
           <a

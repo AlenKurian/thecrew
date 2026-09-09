@@ -120,13 +120,11 @@ const LABELS: Record<keyof ApplicationInput, string> = {
   fullName: "Full name",
   email: "Email",
   phone: "Phone",
-  city: "City",
-  role: "What they do",
-  whyJoin: "Why join THE CREW",
-  portfolioUrl: "Portfolio",
-  socialUrl: "Instagram / LinkedIn",
-  skills: "Skills / interests",
-  availability: "Availability",
+  city: "City / Country",
+  role: "Role / Profession",
+  whyJoin: "What drives them to create",
+  portfolioUrl: "LinkedIn / Portfolio",
+  skills: "Area of interest",
 };
 
 const PRIMARY: (keyof ApplicationInput)[] = [
@@ -138,12 +136,7 @@ const PRIMARY: (keyof ApplicationInput)[] = [
   "whyJoin",
 ];
 
-const OPTIONAL: (keyof ApplicationInput)[] = [
-  "portfolioUrl",
-  "socialUrl",
-  "skills",
-  "availability",
-];
+const OPTIONAL: (keyof ApplicationInput)[] = ["portfolioUrl", "skills"];
 
 const ORDER = [...PRIMARY, ...OPTIONAL];
 

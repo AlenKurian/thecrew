@@ -45,8 +45,15 @@ export default function Location() {
       </span>
 
       <h2 className="location-reveal relative mt-3 font-display text-[9vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[10vw] sm:mt-6 sm:text-[6vw]">
-        Limited Crew<br className="sm:hidden" /> Positions.
+        Not For Everyone.<br className="sm:hidden" /> And That&rsquo;s The Point.
       </h2>
+
+      <p className="location-reveal relative mx-auto mt-5 max-w-xl text-sm leading-relaxed text-paper/70 xs:mt-6 sm:text-base">
+        THE CREW&trade; is intentionally selective. We&rsquo;re not after the
+        biggest crowd &mdash; we&rsquo;re after the right people: curious,
+        contributing, detail-obsessed, holding themselves to a higher standard,
+        and wanting to be in the room when something happens.
+      </p>
     </section>
   );
 }

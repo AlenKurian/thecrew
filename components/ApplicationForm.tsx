@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const fieldBase =
-  "w-full border-b border-paper/30 bg-transparent py-3 text-base text-paper placeholder:text-paper/40 focus:border-paper focus:outline-none transition-colors duration-300";
+  "w-full border border-paper/15 bg-paper/[0.03] px-4 pb-4 pt-9 text-sm text-paper placeholder:text-transparent focus:border-paper/60 focus:outline-none transition-colors duration-300";
 
 export default function ApplicationForm() {
   const [state, setState] = useState<SubmitState>("idle");
@@ -89,189 +89,169 @@ export default function ApplicationForm() {
   }
 
   return (
-    <div ref={formTopRef}>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate className="mt-8 xs:mt-10 sm:mt-14">
-        <div className="grid grid-cols-1 gap-x-10 gap-y-6 xs:gap-y-8 sm:grid-cols-2">
-          <Field
-            id="fullName"
-            label="Full Name"
-            required
-            error={errors.fullName?.message}
-          >
-            <input
-              id="fullName"
-              type="text"
-              autoComplete="name"
-              className={fieldBase}
-              placeholder="Your name"
-              aria-invalid={!!errors.fullName}
-              {...register("fullName")}
-            />
-          </Field>
+    <div ref={formTopRef} className="mt-8 xs:mt-10 sm:mt-14">
+      <div className="border border-paper/15 bg-paper/[0.02] p-6 xs:p-8 sm:p-10">
+        <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-paper xs:text-sm">
+          Apply to THE CREW&trade;
+        </h3>
 
-          <Field id="email" label="Email" required error={errors.email?.message}>
-            <input
-              id="email"
-              type="email"
-              autoComplete="email"
-              className={fieldBase}
-              placeholder="you@email.com"
-              aria-invalid={!!errors.email}
-              {...register("email")}
-            />
-          </Field>
-
-          <Field id="phone" label="Phone Number" required error={errors.phone?.message}>
-            <input
-              id="phone"
-              type="tel"
-              autoComplete="tel"
-              className={fieldBase}
-              placeholder="+91 00000 00000"
-              aria-invalid={!!errors.phone}
-              {...register("phone")}
-            />
-          </Field>
-
-          <Field id="city" label="City" required error={errors.city?.message}>
-            <input
-              id="city"
-              type="text"
-              autoComplete="address-level2"
-              className={fieldBase}
-              placeholder="Where are you based?"
-              aria-invalid={!!errors.city}
-              {...register("city")}
-            />
-          </Field>
-
-          <Field
-            id="role"
-            label="What do you do?"
-            required
-            error={errors.role?.message}
-            className="sm:col-span-2"
-          >
-            <input
-              id="role"
-              type="text"
-              className={fieldBase}
-              placeholder="Student, designer, marketer, filmmaker…"
-              aria-invalid={!!errors.role}
-              {...register("role")}
-            />
-          </Field>
-
-          <Field
-            id="whyJoin"
-            label="Why do you want to be part of THE CREW?"
-            required
-            error={errors.whyJoin?.message}
-            className="sm:col-span-2"
-          >
-            <textarea
-              id="whyJoin"
-              rows={4}
-              className={cn(fieldBase, "resize-none")}
-              placeholder="Tell us what draws you in."
-              aria-invalid={!!errors.whyJoin}
-              {...register("whyJoin")}
-            />
-          </Field>
-
-          <div className="sm:col-span-2 mt-2 flex items-center gap-3 text-[11px] font-meta text-paper/40">
-            <span className="h-px flex-1 bg-paper/15" />
-            Optional
-            <span className="h-px flex-1 bg-paper/15" />
-          </div>
-
-          <Field
-            id="portfolioUrl"
-            label="Portfolio URL"
-            error={errors.portfolioUrl?.message}
-          >
-            <input
-              id="portfolioUrl"
-              type="url"
-              className={fieldBase}
-              placeholder="https://"
-              aria-invalid={!!errors.portfolioUrl}
-              {...register("portfolioUrl")}
-            />
-          </Field>
-
-          <Field
-            id="socialUrl"
-            label="Instagram / LinkedIn"
-            error={errors.socialUrl?.message}
-          >
-            <input
-              id="socialUrl"
-              type="url"
-              className={fieldBase}
-              placeholder="https://"
-              aria-invalid={!!errors.socialUrl}
-              {...register("socialUrl")}
-            />
-          </Field>
-
-          <Field
-            id="skills"
-            label="Skills / areas you're interested in"
-            error={errors.skills?.message}
-          >
-            <input
-              id="skills"
-              type="text"
-              className={fieldBase}
-              placeholder="Photography, editing, copywriting…"
-              aria-invalid={!!errors.skills}
-              {...register("skills")}
-            />
-          </Field>
-
-          <Field
-            id="availability"
-            label="Availability"
-            error={errors.availability?.message}
-          >
-            <input
-              id="availability"
-              type="text"
-              className={fieldBase}
-              placeholder="Dates you're free"
-              aria-invalid={!!errors.availability}
-              {...register("availability")}
-            />
-          </Field>
-        </div>
-
-        {state === "error" && serverError && (
-          <div
-            role="alert"
-            className="mt-8 border border-paper/60 bg-paper/10 px-5 py-4 text-sm text-paper"
-          >
-            {serverError}
-          </div>
-        )}
-
-        <button
-          type="submit"
-          disabled={isSubmitting}
-          className="group mt-8 inline-flex w-full items-center justify-center gap-2 bg-paper px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper/80 disabled:cursor-not-allowed disabled:opacity-60 xs:mt-12 xs:px-8 xs:py-6 xs:text-sm sm:w-auto sm:px-14"
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+          className="mt-8 xs:mt-10"
         >
-          {isSubmitting
-            ? "Submitting…"
-            : state === "error"
-              ? "Try Again"
-              : "Submit Application"}
-          {!isSubmitting && (
-            <span className="transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
+          <div className="grid grid-cols-1 gap-5 xs:gap-6 sm:grid-cols-2">
+            <Field
+              id="fullName"
+              label="Full Name"
+              error={errors.fullName?.message}
+            >
+              <input
+                id="fullName"
+                type="text"
+                autoComplete="name"
+                className={fieldBase}
+                placeholder="Full Name"
+                aria-invalid={!!errors.fullName}
+                {...register("fullName")}
+              />
+            </Field>
+
+            <Field id="email" label="Email" error={errors.email?.message}>
+              <input
+                id="email"
+                type="email"
+                autoComplete="email"
+                className={fieldBase}
+                placeholder="Email"
+                aria-invalid={!!errors.email}
+                {...register("email")}
+              />
+            </Field>
+
+            <Field id="phone" label="Phone" error={errors.phone?.message}>
+              <input
+                id="phone"
+                type="tel"
+                autoComplete="tel"
+                className={fieldBase}
+                placeholder="Phone"
+                aria-invalid={!!errors.phone}
+                {...register("phone")}
+              />
+            </Field>
+
+            <Field
+              id="city"
+              label="City / Country"
+              error={errors.city?.message}
+            >
+              <input
+                id="city"
+                type="text"
+                autoComplete="address-level2"
+                className={fieldBase}
+                placeholder="City / Country"
+                aria-invalid={!!errors.city}
+                {...register("city")}
+              />
+            </Field>
+
+            <Field
+              id="role"
+              label="Role / Profession"
+              error={errors.role?.message}
+            >
+              <input
+                id="role"
+                type="text"
+                className={fieldBase}
+                placeholder="Role / Profession"
+                aria-invalid={!!errors.role}
+                {...register("role")}
+              />
+            </Field>
+
+            <Field
+              id="portfolioUrl"
+              label="LinkedIn / Portfolio"
+              error={errors.portfolioUrl?.message}
+            >
+              <input
+                id="portfolioUrl"
+                type="url"
+                className={fieldBase}
+                placeholder="LinkedIn / Portfolio"
+                aria-invalid={!!errors.portfolioUrl}
+                {...register("portfolioUrl")}
+              />
+            </Field>
+
+            <Field
+              id="skills"
+              label="Area of Interest"
+              error={errors.skills?.message}
+              className="sm:col-span-2"
+            >
+              <input
+                id="skills"
+                type="text"
+                className={fieldBase}
+                placeholder="Area of Interest"
+                aria-invalid={!!errors.skills}
+                {...register("skills")}
+              />
+            </Field>
+
+            <Field
+              id="whyJoin"
+              label="What drives you to create?"
+              error={errors.whyJoin?.message}
+              className="sm:col-span-2"
+            >
+              <textarea
+                id="whyJoin"
+                rows={3}
+                className={cn(fieldBase, "resize-none")}
+                placeholder="What drives you to create?"
+                aria-invalid={!!errors.whyJoin}
+                {...register("whyJoin")}
+              />
+            </Field>
+          </div>
+
+          {state === "error" && serverError && (
+            <div
+              role="alert"
+              className="mt-8 border border-paper/60 bg-paper/10 px-5 py-4 text-sm text-paper"
+            >
+              {serverError}
+            </div>
           )}
-        </button>
-      </form>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="group mt-8 inline-flex w-full items-center justify-center gap-2 bg-paper px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper/80 disabled:cursor-not-allowed disabled:opacity-60 xs:text-sm sm:w-auto sm:px-14"
+          >
+            {isSubmitting
+              ? "Submitting…"
+              : state === "error"
+                ? "Try Again"
+                : "Submit Application"}
+            {!isSubmitting && (
+              <span className="transition-transform duration-300 group-hover:translate-x-1">
+                →
+              </span>
+            )}
+          </button>
+
+          <p className="mt-8 text-center text-xs text-paper/40 xs:text-sm">
+            Selective applications. Limited positions. Further details will be
+            shared directly via email.
+          </p>
+        </form>
+      </div>
     </div>
   );
 }
@@ -279,30 +259,30 @@ export default function ApplicationForm() {
 function Field({
   id,
   label,
-  required,
   error,
   children,
   className,
 }: {
   id: string;
   label: string;
-  required?: boolean;
   error?: string;
   children: React.ReactNode;
   className?: string;
 }) {
   return (
-    <div className={cn("flex flex-col gap-2", className)}>
+    <div className={cn("relative flex flex-col", className)}>
       <label
         htmlFor={id}
-        className="text-[11px] font-meta text-paper/60"
+        className="pointer-events-none absolute left-4 top-4 text-[11px] font-meta uppercase tracking-[0.15em] text-paper/40"
       >
         {label}
-        {required && <span className="ml-1 text-paper">*</span>}
       </label>
       {children}
       {error && (
-        <p role="alert" className="text-xs font-medium text-paper underline underline-offset-2">
+        <p
+          role="alert"
+          className="mt-2 text-xs font-medium text-paper underline underline-offset-2"
+        >
           {error}
         </p>
       )}

@@ -41,9 +41,9 @@ export default function ApplicationCTA() {
         In the Room?
       </h2>
 
-      <p className="cta-reveal mt-4 max-w-lg text-sm font-medium xs:mt-6 xs:text-base sm:mt-8 sm:text-xl">
-        If you&rsquo;re curious, hands-on, and ready to be part of the
-        experience, apply for THE CREW.
+      <p className="cta-reveal mt-4 max-w-2xl text-sm font-medium xs:mt-6 xs:text-base sm:mt-8 sm:text-xl">
+        Tell us who you are. Tell us what you create. Tell us what you&rsquo;re building. And tell us why you want to be part of THE
+CREW&trade;.
       </p>
 
       <a

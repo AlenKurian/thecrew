@@ -39,7 +39,7 @@ export default function Header() {
       <div className="flex items-center gap-3 xs:gap-4 sm:gap-8">
         <div className="hidden flex-col items-end gap-0.5 sm:flex">
           <span className="font-meta text-[10px] text-paper">
-            The Crew
+            The CREW™
           </span>
           <span className="font-meta text-[10px] text-paper/60">
             Calicut • Kerala
