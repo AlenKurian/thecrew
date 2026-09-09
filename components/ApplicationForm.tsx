@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 type SubmitState = "idle" | "submitting" | "success" | "error";
 
 const fieldBase =
-  "w-full border border-paper/15 bg-paper/[0.03] px-4 pb-4 pt-9 text-sm text-paper placeholder:text-transparent focus:border-paper/60 focus:outline-none transition-colors duration-300";
+  "w-full border border-paper/15 bg-paper/[0.03] px-3.5 pb-2.5 pt-7 text-[13px] text-paper placeholder:text-transparent focus:border-paper/60 focus:outline-none transition-colors duration-300 xs:px-4 xs:pb-4 xs:pt-9 xs:text-sm";
 
 export default function ApplicationForm() {
   const [state, setState] = useState<SubmitState>("idle");
@@ -89,18 +89,18 @@ export default function ApplicationForm() {
   }
 
   return (
-    <div ref={formTopRef} className="mt-8 xs:mt-10 sm:mt-14">
-      <div className="border border-paper/15 bg-paper/[0.02] p-6 xs:p-8 sm:p-10">
-        <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-paper xs:text-sm">
+    <div ref={formTopRef} className="mt-6 xs:mt-10 sm:mt-14">
+      <div className="border border-paper/15 bg-paper/[0.02] p-4 xs:p-8 sm:p-10">
+        <h3 className="text-[11px] font-bold uppercase tracking-[0.3em] text-paper xs:text-sm">
           Apply to THE CREW&trade;
         </h3>
 
         <form
           onSubmit={handleSubmit(onSubmit)}
           noValidate
-          className="mt-8 xs:mt-10"
+          className="mt-6 xs:mt-10"
         >
-          <div className="grid grid-cols-1 gap-5 xs:gap-6 sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-3.5 xs:gap-6 sm:grid-cols-2">
             <Field
               id="fullName"
               label="Full Name"
@@ -229,11 +229,11 @@ export default function ApplicationForm() {
             </div>
           )}
 
-          <div className="mt-8 flex justify-center">
+          <div className="mt-6 flex justify-center xs:mt-8">
             <button
               type="submit"
               disabled={isSubmitting}
-              className="group inline-flex w-full items-center justify-center gap-2 bg-paper px-6 py-4 text-xs font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper/80 disabled:cursor-not-allowed disabled:opacity-60 xs:text-sm sm:w-auto sm:px-14"
+              className="group inline-flex w-full items-center justify-center gap-2 bg-paper px-6 py-3 text-[11px] font-bold uppercase tracking-[0.2em] text-ink transition-colors duration-300 hover:bg-paper/80 disabled:cursor-not-allowed disabled:opacity-60 xs:py-4 xs:text-sm sm:w-auto sm:px-14"
             >
               {isSubmitting
                 ? "Submitting…"
@@ -248,7 +248,7 @@ export default function ApplicationForm() {
             </button>
           </div>
 
-          <p className="mt-8 text-center text-xs text-paper/40 xs:text-sm">
+          <p className="mt-6 text-center text-[11px] text-paper/40 xs:mt-8 xs:text-sm">
             Selective applications. Limited positions. Further details will be
             shared directly via email.
           </p>
@@ -275,7 +275,7 @@ function Field({
     <div className={cn("relative flex flex-col", className)}>
       <label
         htmlFor={id}
-        className="pointer-events-none absolute left-4 top-4 text-[11px] font-meta uppercase tracking-[0.15em] text-paper/40"
+        className="pointer-events-none absolute left-3.5 top-3 text-[10px] font-meta uppercase tracking-[0.15em] text-paper/40 xs:left-4 xs:top-4 xs:text-[11px]"
       >
         {label}
       </label>
