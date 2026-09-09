@@ -39,6 +39,7 @@ export default function WytesStandard() {
         </span>
         <h2 className="font-display text-[6.2vw] uppercase leading-[0.95] text-ink xs:text-[6.7vw] sm:text-[3vw]">
           Different work.{" "}
+          <br className="sm:hidden" />
           <span className="text-muted">Higher expectations.</span>
         </h2>
         <p className="font-meta mt-3 text-[10px] uppercase tracking-wide text-ink xs:mt-6 xs:text-sm sm:text-base">

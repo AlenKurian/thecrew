@@ -148,6 +148,7 @@ export default function WhoItsFor() {
           </span>
           <h2 className="who-heading-reveal mx-auto max-w-xl font-display text-[7vw] uppercase leading-[0.95] text-paper xs:text-[7.5vw] sm:mx-0 sm:text-[3vw]">
             People who&rsquo;d rather be in it{" "}
+            <br className="sm:hidden" />
             <span className="text-muted">than read about it.</span>
           </h2>
         </div>

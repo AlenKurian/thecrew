@@ -88,7 +88,7 @@ export default function Hero() {
           </span>
           <span className="line-clip mt-4 block xs:mt-6 sm:mt-8">
             <span className="hero-line block text-muted text-[8.7vw] xs:text-[10.3vw] sm:text-[7vw] lg:text-[5.8vw]">
-              A ROOM FULL OF POSSIBILITY.
+              A ROOM FULL OF <br className="sm:hidden" />POSSIBILITY.
             </span>
           </span>
         </h1>
