@@ -90,11 +90,14 @@ export default function ExperienceStatement() {
           </span>
           <ol className="mt-5 grid w-full max-w-4xl gap-x-8 gap-y-5 sm:grid-cols-2 sm:mt-8">
             {principles.map((p, i) => (
-              <li key={p.title} className="flex flex-col items-center text-center">
-                <span className="font-display text-base text-paper/40 xs:text-xl">
+              <li
+                key={p.title}
+                className="flex items-start gap-3 text-left sm:flex-col sm:items-center sm:gap-0 sm:text-center"
+              >
+                <span className="font-display text-base text-paper/40 xs:text-lg sm:text-xl">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="mt-1 flex flex-col items-center">
+                <span className="flex flex-col sm:mt-1 sm:items-center">
                   <span className="font-meta text-[12px] uppercase tracking-wide text-paper xs:text-base">
                     {p.title}
                   </span>
