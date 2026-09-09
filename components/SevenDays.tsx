@@ -76,7 +76,7 @@ export default function SevenDays() {
           disciplines, contribute to active work, solve problems in real time,
           and experience what it takes to move an idea from concept to execution.
         </p>
-        <p className="font-meta mt-6 text-sm uppercase tracking-wide text-ink xs:text-base sm:mt-8">
+        <p className="font-meta mt-6 text-[11px] uppercase tracking-wide text-ink xs:text-base sm:mt-8">
           Real people &bull; Real deadlines &bull; Real pressure &bull; Real responsibility
         </p>
       </div>
