@@ -69,7 +69,7 @@ export default function SevenDays() {
         <h3 className="font-display text-2xl uppercase text-ink xs:text-3xl sm:text-4xl">
           Where the real work happens
         </h3>
-        <p className="mt-4 text-[13px] leading-relaxed text-ink/80 xs:text-lg sm:mt-6 sm:text-xl">
+        <p className="mt-4 text-[11px] leading-relaxed text-ink/80 xs:text-lg sm:mt-6 sm:text-xl">
           Forget passive learning. Forget theory without execution. THE CREW&trade;
           puts you closer to the decisions, pressure, creativity, systems, and
           people behind real-world production. You&rsquo;ll collaborate across
