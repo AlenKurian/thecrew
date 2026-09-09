@@ -37,8 +37,9 @@ export default function WytesStandard() {
         <span className="font-meta mb-2 block text-[10px] text-ink/60 xs:mb-4 xs:text-[11px]">
           The Wytes Standard&trade;
         </span>
-        <h2 className="font-display text-[7.5vw] uppercase leading-[0.95] text-ink xs:text-[8vw] sm:text-[3.6vw]">
-          Different work. Higher expectations.
+        <h2 className="font-display text-[6.2vw] uppercase leading-[0.95] text-ink xs:text-[6.7vw] sm:text-[3vw]">
+          Different work.{" "}
+          <span className="text-muted">Higher expectations.</span>
         </h2>
         <p className="font-meta mt-3 text-[10px] uppercase tracking-wide text-ink xs:mt-6 xs:text-sm sm:text-base">
           The thinking &bull; The preparation &bull; The execution &bull; The

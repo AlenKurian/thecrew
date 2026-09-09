@@ -36,8 +36,8 @@ export default function ApplicationFormSection() {
           <span className="text-[9px] font-meta text-paper xs:text-[11px]">
             The Application
           </span>
-          <h2 className="mt-2 font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[12vw] sm:text-[4vw]">
-            Get in the Room.
+          <h2 className="mt-2 font-display text-[7vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[10vw] sm:text-[3.3vw]">
+            Get <span className="text-muted">in the Room.</span>
           </h2>
           <p className="mt-2 text-[12px] leading-relaxed text-paper/70 xs:mt-4 xs:text-base sm:text-lg">
             This is a limited-position program built for people who are

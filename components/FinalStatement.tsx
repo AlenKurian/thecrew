@@ -46,10 +46,10 @@ export default function FinalStatement() {
     >
       <div className="mx-auto flex min-h-[60vh] w-full max-w-[110rem] flex-col items-center justify-center bg-ink px-0 text-center xs:px-6 sm:px-14">
       <h2 className="font-display leading-[0.95]">
-        <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[4vw]">
+        <span className="final-line block text-[9vw] uppercase text-paper xs:text-[10.8vw] sm:text-[3.3vw]">
           Come Curious.
         </span>
-        <span className="final-line block text-[11vw] uppercase text-paper xs:text-[13vw] sm:text-[5vw]">
+        <span className="final-line block text-[9vw] uppercase text-muted xs:text-[10.8vw] sm:text-[4.2vw]">
           Leave Connected.
         </span>
       </h2>

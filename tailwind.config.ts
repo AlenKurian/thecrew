@@ -12,7 +12,7 @@ const config: Config = {
         paper: "#f6f4ef",
         // Secondary greys sampled from the site theme — muted for large
         // sub-headings, body for paragraph copy.
-        muted: "#9a9a9a",
+        muted: "#a8a8a8",
         "body-grey": "#4a4a4a",
       },
       fontFamily: {

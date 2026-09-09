@@ -82,12 +82,12 @@ export default function Hero() {
         </span>
         <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
           <span className="line-clip block">
-            <span className="hero-line block text-[12vw] xs:text-[14vw] sm:text-[9vw] lg:text-[7.5vw]">
+            <span className="hero-line block text-[10vw] xs:text-[11.5vw] sm:text-[7.5vw] lg:text-[6.2vw]">
               THE CREW<sup className="relative top-[0.001em] align-super text-[0.6em]">™</sup>
             </span>
           </span>
           <span className="line-clip mt-4 block xs:mt-6 sm:mt-8">
-            <span className="hero-line block text-paper text-[10.5vw] xs:text-[12.5vw] sm:text-[8.5vw] lg:text-[7vw]">
+            <span className="hero-line block text-muted text-[8.7vw] xs:text-[10.3vw] sm:text-[7vw] lg:text-[5.8vw]">
               A ROOM FULL OF POSSIBILITY.
             </span>
           </span>

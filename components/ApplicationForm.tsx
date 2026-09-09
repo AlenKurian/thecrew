@@ -63,8 +63,8 @@ export default function ApplicationForm() {
         <span className="text-[10px] font-meta text-paper xs:text-[11px]">
           Success
         </span>
-        <h3 className="mt-3 font-display text-[9vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[10vw] sm:text-[5vw]">
-          Application Received
+        <h3 className="mt-3 font-display text-[7.5vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[8.3vw] sm:text-[4.2vw]">
+          Application <span className="text-muted">Received</span>
         </h3>
         <p className="mt-4 max-w-sm text-sm text-paper/70 xs:mt-6 xs:text-base sm:text-lg">
           We&rsquo;ll be in touch.

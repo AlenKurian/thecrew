@@ -18,8 +18,8 @@ export default function ApplyPage() {
           <span className="font-meta text-[10px] text-paper xs:text-[11px]">
             Studio Wytes™ — The Crew
           </span>
-          <h1 className="mt-2 font-display text-[8vw] uppercase leading-[0.95] text-paper xs:mt-3 xs:text-[9vw] sm:text-[4vw]">
-            7 Days. One Experience.
+          <h1 className="mt-2 font-display text-[6.7vw] uppercase leading-[0.95] text-paper xs:mt-3 xs:text-[7.5vw] sm:text-[3.3vw]">
+            7 Days. <span className="text-muted">One Experience.</span>
           </h1>
           <p className="font-meta mt-2 text-[10px] text-paper/50 xs:text-[11px]">
             Calicut • Kerala
