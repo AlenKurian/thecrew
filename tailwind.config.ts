@@ -8,8 +8,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: "#0b0b0b",
-        paper: "#fdfcf9",
+        ink: "#0a0a0a",
+        paper: "#f6f4ef",
+        // Secondary greys sampled from the site theme — muted for large
+        // sub-headings, body for paragraph copy.
+        muted: "#9a9a9a",
+        "body-grey": "#4a4a4a",
       },
       fontFamily: {
         display: ["var(--font-anton)"],
