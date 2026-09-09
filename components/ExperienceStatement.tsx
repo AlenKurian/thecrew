@@ -65,14 +65,14 @@ export default function ExperienceStatement() {
           <span className="font-meta mb-2 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
             The Wytes Standard&trade;
           </span>
-          <h2 className="font-display text-[9vw] uppercase leading-[0.95] text-paper xs:text-[9vw] sm:text-[3.6vw]">
+          <h2 className="font-display text-[7.5vw] uppercase leading-[0.95] text-paper xs:text-[8vw] sm:text-[3.6vw]">
             Different work. Higher expectations.
           </h2>
-          <p className="font-meta mt-4 text-[11px] uppercase tracking-wide text-paper xs:mt-6 xs:text-base">
+          <p className="font-meta mt-3 text-[10px] uppercase tracking-wide text-paper xs:mt-6 xs:text-sm sm:text-base">
             The thinking &bull; The preparation &bull; The execution &bull; The
             discipline &bull; The finish
           </p>
-          <p className="mt-4 max-w-3xl text-[13px] leading-relaxed text-paper/80 xs:mt-6 xs:text-lg sm:text-lg">
+          <p className="mt-3 max-w-3xl text-[12px] leading-relaxed text-paper/80 xs:mt-6 xs:text-base sm:text-lg">
             It means approaching every idea with intention, every detail with
             precision, and every execution with accountability. For THE CREW&trade;,
             that standard becomes part of the experience — you won&rsquo;t simply
@@ -82,27 +82,27 @@ export default function ExperienceStatement() {
         </div>
 
         <div className="flex flex-col">
-          <p className="font-display text-[9vw] uppercase leading-[0.95] text-paper xs:text-[7.5vw] sm:text-[3vw]">
+          <p className="font-display text-[7.5vw] uppercase leading-[0.95] text-paper xs:text-[7vw] sm:text-[3vw]">
             Think beyond ordinary.
           </p>
-          <span className="font-meta mt-2 block text-[10px] uppercase tracking-wide text-paper/60 xs:mt-3 xs:text-[11px]">
+          <span className="font-meta mt-2 block text-[9px] uppercase tracking-wide text-paper/60 xs:mt-3 xs:text-[11px]">
             The Wytes Standard&trade; is built on
           </span>
-          <ol className="mt-6 border-t border-paper/15 xs:mt-8">
+          <ol className="mt-5 border-t border-paper/15 xs:mt-8">
             {principles.map((p, i) => (
               <li
                 key={p.title}
-                className="flex items-center gap-4 border-b border-paper/15 py-5 xs:gap-6 xs:py-7"
+                className="flex items-center gap-3 border-b border-paper/15 py-4 xs:gap-6 xs:py-7"
               >
-                <span className="font-display shrink-0 text-4xl text-paper/25 xs:text-5xl sm:text-6xl">
+                <span className="font-display shrink-0 text-3xl text-paper/25 xs:text-4xl sm:text-6xl">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="h-14 w-px shrink-0 bg-paper/20 xs:h-16" />
+                <span className="h-12 w-px shrink-0 bg-paper/20 xs:h-16" />
                 <span className="flex flex-col">
-                  <span className="font-meta text-sm uppercase tracking-[0.15em] text-paper xs:text-base sm:text-lg">
+                  <span className="font-meta text-[12px] uppercase tracking-[0.15em] text-paper xs:text-sm sm:text-lg">
                     {p.title}
                   </span>
-                  <span className="mt-1.5 text-[13px] leading-relaxed text-paper/70 xs:text-base">
+                  <span className="mt-1 text-[11px] leading-relaxed text-paper/70 xs:text-sm sm:text-base">
                     {p.body}
                   </span>
                 </span>
