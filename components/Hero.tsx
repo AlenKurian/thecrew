@@ -83,7 +83,7 @@ export default function Hero() {
         <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
           <span className="line-clip block">
             <span className="hero-line block text-[12vw] xs:text-[14vw] sm:text-[9vw] lg:text-[7.5vw]">
-              THE CREW&trade;
+              THE CREW<sup className="relative top-[0.001em] align-super text-[0.6em]">™</sup>
             </span>
           </span>
           <span className="line-clip mt-4 block xs:mt-6 sm:mt-8">
