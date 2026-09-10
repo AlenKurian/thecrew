@@ -62,7 +62,7 @@ export default function ExperienceStatement() {
     >
       <div className="standard-reveal mx-auto flex w-full max-w-[110rem] flex-col bg-ink">
         <div className="flex flex-col sm:items-center sm:text-center">
-          <p className="font-display text-center text-[5vw] uppercase leading-[0.95] text-paper/80 xs:text-[5.8vw] sm:text-[2.5vw]">
+          <p className="font-display text-center text-[5vw] uppercase leading-[0.95] text-paper xs:text-[5.8vw] sm:text-[2.5vw]">
             Think <span className="text-paper/80">beyond ordinary.</span>
           </p>
           <span className="font-meta mt-2 block text-center text-[9px] uppercase tracking-wide text-paper/60 xs:mt-3 xs:text-[11px]">

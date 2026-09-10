@@ -58,7 +58,7 @@ export default function ImageBreak() {
       </div>
 
       <div className="image-break-overlay absolute inset-0 flex items-center justify-center px-4 text-center xs:px-5">
-        <h2 className="font-display text-[6.6vw] uppercase leading-[0.95] text-paper/80 drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)] xs:text-[10vw] sm:text-[5vw]">
+        <h2 className="font-display text-[6.6vw] uppercase leading-[0.95] text-paper drop-shadow-[0_4px_24px_rgba(0,0,0,0.5)] xs:text-[10vw] sm:text-[5vw]">
           This Is <span className="text-paper/80">the Room</span>
         </h2>
       </div>
