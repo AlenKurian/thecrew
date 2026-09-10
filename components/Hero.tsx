@@ -80,7 +80,7 @@ export default function Hero() {
         <span className="hero-meta mb-4 block font-meta text-[10px] uppercase tracking-[0.25em] text-paper/60 xs:text-[11px]">
           Studio Wytes&trade; Presents
         </span>
-        <h1 className="font-display text-paper leading-[1.08] xs:leading-[0.95]">
+        <h1 className="font-hero text-paper leading-[1.08] xs:leading-[0.95]">
           <span className="line-clip block">
             <span className="hero-line block text-[10vw] xs:text-[11.5vw] sm:text-[7.5vw] lg:text-[6.2vw]">
               THE CREW<sup className="relative top-[0.001em] align-super text-[0.6em]">™</sup>

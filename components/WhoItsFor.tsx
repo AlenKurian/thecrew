@@ -146,7 +146,7 @@ export default function WhoItsFor() {
           <span className="who-heading-reveal font-meta mb-3 block text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
             The Room Is For
           </span>
-          <h2 className="who-heading-reveal mx-auto max-w-xl font-display text-[7vw] uppercase leading-[0.95] text-paper xs:text-[7.5vw] sm:mx-0 sm:text-[3vw]">
+          <h2 className="who-heading-reveal mx-auto max-w-xl font-display text-[8.5vw] uppercase leading-[0.95] text-paper xs:text-[9vw] sm:mx-0 sm:text-[3.6vw]">
             People who&rsquo;d rather be in it{" "}
             <span className="mt-1 block text-muted sm:mt-0 sm:inline">
               than read about it.

@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="border-t border-ink/15 bg-paper px-4 py-8 xs:px-6 xs:py-10 sm:px-10 sm:py-14">
-      <h2 className="font-display text-[6.7vw] uppercase leading-none text-ink xs:text-[7.5vw] sm:text-[4.2vw]">
+      <h2 className="font-display text-[7.6vw] uppercase leading-none text-ink xs:text-[8.4vw] sm:text-[4.8vw]">
         Studio Wytes<sup className="relative top-[0.5em] align-top text-[0.4em]">™</sup>
       </h2>
 

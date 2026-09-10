@@ -49,7 +49,21 @@ body {
   outline-offset: 3px;
 }
 
+/* Section display type — heavy grotesque, tightly tracked, tight leading.
+   Matches the Studio Wytes "About" reference: Helvetica-style bold sans,
+   not condensed. Applied to every section heading site-wide EXCEPT the
+   hero, which keeps the condensed Anton face via .font-hero below. */
 .font-display {
+  font-family: var(--font-inter), "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+/* Hero headline — retains the original tall condensed display face. */
+.font-hero {
   font-family: var(--font-anton), "Arial Narrow", sans-serif;
   text-transform: uppercase;
   letter-spacing: -0.02em;
