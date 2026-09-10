@@ -65,7 +65,7 @@ export default function Disciplines() {
               <span className="h-px flex-1 bg-paper/30" />
             </div>
 
-            <h3 className="font-display text-[5.5vw] uppercase leading-[0.9] text-paper xs:text-[5vw] sm:text-[2.6vw] lg:text-[2vw]">
+            <h3 className="font-display text-[5vw] uppercase leading-[0.9] text-paper xs:text-[4.5vw] sm:text-[2.4vw] lg:text-[1.8vw]">
               {item.title}
             </h3>
 

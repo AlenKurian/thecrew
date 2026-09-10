@@ -50,7 +50,7 @@ export default function SevenDays() {
     >
       <div
         ref={numberRef}
-        className="font-display leading-none text-[42vw] text-ink xs:text-[46vw] sm:text-[32vw] lg:text-[22vw]"
+        className="font-display leading-none text-[50vw] text-ink xs:text-[55vw] sm:text-[38vw] lg:text-[25vw]"
         aria-hidden="true"
       >
         07
@@ -66,7 +66,7 @@ export default function SevenDays() {
       </p>
 
       <div className="seven-copy mt-10 max-w-4xl xs:mt-14 sm:mt-20">
-        <h3 className="font-display text-2xl uppercase text-ink xs:text-3xl sm:text-4xl">
+        <h3 className="font-display text-xl uppercase text-ink xs:text-2xl sm:text-3xl">
           Where the real <span className="text-muted">work happens</span>
         </h3>
         <p className="mt-4 text-[11px] leading-relaxed text-ink/80 xs:text-lg sm:mt-6 sm:text-xl">

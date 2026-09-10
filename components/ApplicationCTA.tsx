@@ -35,7 +35,7 @@ export default function ApplicationCTA() {
       ref={sectionRef}
       className="flex flex-col items-center justify-center bg-paper px-4 pt-16 pb-8 text-center text-ink xs:px-6 xs:pt-28 xs:pb-12 sm:pt-40 sm:pb-16"
     >
-      <h2 className="cta-reveal font-display text-[9.2vw] uppercase leading-[0.95] xs:text-[10vw] sm:text-[6vw]">
+      <h2 className="cta-reveal font-display text-[8vw] uppercase leading-[0.95] xs:text-[9vw] sm:text-[5.4vw]">
         Ready to Get
         <span className="mt-2 block text-muted xs:mt-3 sm:mt-1">In the Room?</span>
       </h2>

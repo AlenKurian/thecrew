@@ -46,7 +46,7 @@ export default function Benefits() {
       className="bg-paper px-4 pt-8 pb-16 text-ink xs:px-6 xs:pt-12 xs:pb-24 sm:px-10 sm:pt-16 sm:pb-32"
     >
       <div className="mb-10 flex items-start justify-between gap-6 xs:mb-14 sm:mb-16">
-        <h2 className="benefits-heading font-display text-[9.5vw] uppercase leading-[0.95] xs:text-[10vw] sm:text-[5.6vw]">
+        <h2 className="benefits-heading font-display text-[8.3vw] uppercase leading-[0.95] xs:text-[9vw] sm:text-[5vw]">
           We&rsquo;ve <span className="text-muted">Got You</span>
         </h2>
         <div className="mt-2 hidden shrink-0 flex-col gap-2 text-right sm:flex">
@@ -85,7 +85,7 @@ export default function Benefits() {
               />
             </div>
             <div className="flex min-w-0 flex-1 flex-col justify-center gap-1 px-5 xs:px-8 sm:px-10">
-              <span className="font-display text-xl uppercase leading-tight xs:text-[5vw] sm:text-[2.4vw]">
+              <span className="font-display text-lg uppercase leading-tight xs:text-[4.5vw] sm:text-[2.2vw]">
                 {item.title}
               </span>
               <span className="text-xs text-ink/60 xs:text-sm">
