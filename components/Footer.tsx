@@ -1,11 +1,11 @@
 export default function Footer() {
   return (
     <footer className="border-t border-ink/15 bg-paper px-4 py-8 xs:px-6 xs:py-10 sm:px-10 sm:py-14">
-      <h2 className="font-display text-[6.7vw] uppercase leading-none text-ink xs:text-[7.5vw] sm:text-[4.2vw]">
+      <h2 className="font-display text-[5.4vw] uppercase leading-none text-ink xs:text-[7.5vw] sm:text-[4.2vw]">
         Studio Wytes<sup className="relative top-[0.5em] align-top text-[0.4em]">™</sup>
       </h2>
 
-      <p className="mt-3 max-w-md font-display text-[4.2vw] uppercase leading-[1.1] text-muted xs:mt-4 xs:text-[4.2vw] sm:text-xl">
+      <p className="mt-3 max-w-md font-display text-[3.4vw] uppercase leading-[1.1] text-ink/45 xs:mt-4 xs:text-[4.2vw] sm:text-xl">
         Create the experience.
         <br />
         Become part of the story.

@@ -50,7 +50,7 @@ export default function SevenDays() {
     >
       <div
         ref={numberRef}
-        className="font-display leading-none text-[50vw] text-ink xs:text-[55vw] sm:text-[38vw] lg:text-[25vw]"
+        className="font-display leading-none text-[40vw] text-ink xs:text-[55vw] sm:text-[38vw] lg:text-[25vw]"
         aria-hidden="true"
       >
         07
@@ -66,8 +66,8 @@ export default function SevenDays() {
       </p>
 
       <div className="seven-copy mt-10 max-w-4xl xs:mt-14 sm:mt-20">
-        <h3 className="font-display text-xl uppercase text-ink xs:text-2xl sm:text-3xl">
-          Where the real <span className="text-muted">work happens</span>
+        <h3 className="font-display text-base uppercase text-ink xs:text-2xl sm:text-3xl">
+          Where the real <span className="text-ink/45">work happens</span>
         </h3>
         <p className="mt-4 text-[11px] leading-relaxed text-ink/80 xs:text-lg sm:mt-6 sm:text-xl">
           Forget passive learning. Forget theory without execution. THE CREW&trade;
