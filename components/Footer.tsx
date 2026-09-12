@@ -13,12 +13,6 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="mt-6 flex flex-col gap-6 xs:mt-8 xs:gap-8 sm:mt-10 sm:flex-row sm:items-end sm:justify-between">
-        <span className="text-[10px] font-meta uppercase tracking-[0.1em] text-ink/50 xs:text-[11px]">
-          The Wytes Standard&trade; | The Crew&trade; by Studio Wytes&trade;
-        </span>
-      </div>
-
       <div className="font-meta mt-6 flex flex-col-reverse gap-4 border-t border-ink/10 pt-6 text-[10px] tracking-[0.15em] text-ink/30 xs:mt-8 xs:text-[11px] sm:flex-row sm:items-center sm:justify-between">
         <span>
           © {new Date().getFullYear()} Studio Wytes<sup className="relative -top-[0.7em] text-[0.7em]">™</sup>. All

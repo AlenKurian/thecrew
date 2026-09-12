@@ -44,16 +44,16 @@ export default function WytesStandard() {
             Higher expectations.
           </span>
         </h2>
-        <div className="mt-10 flex w-full max-w-4xl flex-wrap items-center justify-center gap-3 xs:mt-14 xs:gap-4">
+        <div className="mt-10 grid w-full max-w-4xl grid-cols-2 gap-3 xs:mt-14 xs:gap-4 sm:flex sm:flex-wrap sm:items-center sm:justify-center">
           {wytesStandardPrinciples.map((item, i) => (
             <div
               key={item}
-              className="flex items-center gap-2.5 rounded-full bg-ink px-5 py-3 xs:gap-3 xs:px-6 xs:py-4"
+              className="flex h-full items-center gap-2.5 rounded-full bg-ink px-4 py-3 xs:gap-3 xs:px-6 xs:py-4"
             >
               <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-paper font-meta text-[9px] text-ink xs:h-6 xs:w-6 xs:text-[10px]">
                 {i + 1}
               </span>
-              <span className="whitespace-nowrap text-[11px] font-semibold uppercase tracking-[0.08em] text-paper xs:text-sm">
+              <span className="whitespace-normal text-[11px] font-semibold uppercase tracking-[0.08em] text-paper xs:text-sm sm:whitespace-nowrap">
                 {item}
               </span>
             </div>

@@ -59,7 +59,7 @@ export default function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative flex min-h-[95svh] w-full flex-col justify-end overflow-hidden bg-ink px-4 pb-16 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-20 xs:pt-28 sm:min-h-[100svh] sm:px-10 sm:pb-24 sm:pt-32"
+      className="relative flex min-h-[95svh] w-full flex-col justify-start overflow-hidden bg-ink px-4 pb-16 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-20 xs:pt-28 sm:min-h-[100svh] sm:justify-end sm:px-10 sm:pb-24 sm:pt-32"
     >
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
@@ -99,6 +99,10 @@ export default function Hero() {
           Events &bull; Production &bull; Experience Building
         </span>
 
+        <p className="hero-sub mt-6 max-w-2xl text-sm font-semibold uppercase leading-tight text-paper xs:mt-8 xs:text-base sm:text-lg">
+          Some people attend experiences. Others build them.
+        </p>
+
         <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
           <Link
             href="/apply"
@@ -113,7 +117,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="hero-scroll font-meta mt-12 flex items-center justify-end gap-2 text-[10px] text-paper/60 xs:mt-12 xs:text-[11px] sm:absolute sm:bottom-10 sm:right-10 sm:mt-0">
+      <div className="hero-scroll font-meta mt-auto flex items-center justify-end gap-2 pt-12 text-[10px] text-paper/60 xs:pt-12 xs:text-[11px] sm:absolute sm:bottom-10 sm:right-10 sm:mt-0 sm:pt-0">
         <span>Scroll to enter</span>
         <span className="animate-bounce">↓</span>
       </div>

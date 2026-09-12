@@ -37,7 +37,7 @@ export default function Location() {
       >
       </div>
 
-      <h2 className="location-reveal relative font-display text-[4.4vw] uppercase leading-[0.95] text-paper xs:text-[6vw] sm:text-[2.4vw]">
+      <h2 className="location-reveal relative font-display text-[6.5vw] uppercase leading-[0.95] text-paper xs:text-[8vw] sm:text-[2.4vw]">
         Not For Everyone.{" "}
         <span className="mt-2 block text-paper/80 xs:mt-3 sm:mt-0 sm:inline">
           And That&rsquo;s The Point.

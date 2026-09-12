@@ -28,15 +28,15 @@ export default function Disciplines() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-ink">
-      <span className="mb-4 block px-4 pt-12 text-[9px] font-meta text-paper/60 xs:px-6 xs:pt-24 xs:text-[11px] sm:px-10 sm:pt-32 sm:mb-16">
+    <section ref={sectionRef} className="bg-paper">
+      <span className="mb-4 block px-4 pt-12 text-[9px] font-meta text-ink/60 xs:px-6 xs:pt-24 xs:text-[11px] sm:px-10 sm:pt-32 sm:mb-16">
         Step Inside the Build
       </span>
 
       {stepInsideTheBuild.map((item, i) => (
         <div
           key={item.title}
-          className={`discipline-card flex flex-col border-t border-paper/15 xs:flex-row ${
+          className={`discipline-card flex flex-col border-t border-ink/15 xs:flex-row ${
             i % 2 === 1 ? "xs:flex-row-reverse" : ""
           }`}
         >
@@ -49,27 +49,27 @@ export default function Disciplines() {
               className="object-cover"
             />
             <div
-              className={`pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink via-ink/40 to-transparent xs:inset-x-auto xs:inset-y-0 xs:h-auto xs:w-1/3 xs:bg-gradient-to-r ${
+              className={`pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-paper via-paper/40 to-transparent xs:inset-x-auto xs:inset-y-0 xs:h-auto xs:w-1/3 xs:bg-gradient-to-r ${
                 i % 2 === 1
-                  ? "xs:left-0 xs:right-auto xs:from-transparent xs:via-ink/40 xs:to-ink"
-                  : "xs:right-0 xs:from-ink xs:via-ink/40 xs:to-transparent"
+                  ? "xs:left-0 xs:right-auto xs:from-transparent xs:via-paper/40 xs:to-paper"
+                  : "xs:right-0 xs:from-paper xs:via-paper/40 xs:to-transparent"
               }`}
             />
           </div>
 
           <div className="flex w-full flex-col justify-center px-3 py-5 xs:w-1/2 xs:px-6 xs:py-8 sm:px-10 sm:py-10">
             <div className="mb-2 flex items-center gap-2 xs:mb-4 xs:gap-3">
-              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-paper/40 font-meta text-[9px] text-paper xs:h-9 xs:w-9 xs:text-[10px]">
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-ink/40 font-meta text-[9px] text-ink xs:h-9 xs:w-9 xs:text-[10px]">
                 {item.number}
               </span>
-              <span className="h-px flex-1 bg-paper/30" />
+              <span className="h-px flex-1 bg-ink/30" />
             </div>
 
-            <h3 className="font-display text-[4vw] uppercase leading-[0.9] text-paper xs:text-[4.5vw] sm:text-[2.4vw] lg:text-[1.8vw]">
+            <h3 className="font-display text-[4vw] uppercase leading-[0.9] text-ink xs:text-[4.5vw] sm:text-[2.4vw] lg:text-[1.8vw]">
               {item.title}
             </h3>
 
-            <p className="mt-2 max-w-sm text-[11px] leading-relaxed text-paper/70 xs:mt-3 xs:text-sm sm:text-base">
+            <p className="mt-2 max-w-sm text-[11px] leading-relaxed text-ink/70 xs:mt-3 xs:text-sm sm:text-base">
               {item.description}
             </p>
           </div>

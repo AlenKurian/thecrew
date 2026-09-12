@@ -38,14 +38,14 @@ export default function ExperienceStatement() {
           <span className="font-meta mb-3 block text-center text-[10px] text-paper/60 xs:mb-4 xs:text-[11px]">
             From Idea to Live Experience
           </span>
-          <p className="mt-5 mx-auto max-w-3xl font-display text-center text-[5vw] uppercase leading-[0.95] text-paper xs:text-[5.5vw] sm:text-[2.1vw]">
+          <p className="mt-5 mx-auto max-w-5xl font-display text-center text-[5vw] uppercase leading-[0.95] text-paper xs:text-[5.5vw] sm:text-[2.5vw]">
             Great events don&rsquo;t simply happen.{" "}
-            <span className="text-paper/80">
+            <span className="text-paper/80"> <br />
               They are imagined, planned, built, coordinated, produced, and
               executed.
             </span>
           </p>
-          <p className="mx-auto mt-6 max-w-2xl text-[12px] leading-relaxed text-paper/70 xs:mt-8 xs:text-base sm:text-lg">
+          <p className="mx-auto mt-6 max-w-2xl text-[12px] leading-relaxed text-paper/70 xs:mt-12 xs:text-base sm:text-lg">
             THE CREW&trade; gives you proximity to that entire process. You
             experience what happens behind the scenes — where ideas become
             environments, production becomes execution, and teams come
