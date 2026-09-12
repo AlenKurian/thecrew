@@ -59,7 +59,7 @@ export default function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative flex min-h-[105svh] w-full flex-col justify-start overflow-hidden bg-ink px-4 pb-16 pt-28 xs:min-h-[105svh] xs:px-6 xs:pb-20 xs:pt-36 sm:min-h-[100svh] sm:justify-end sm:px-10 sm:pb-24 sm:pt-32"
+      className="relative flex min-h-[105svh] w-full flex-col justify-start overflow-hidden bg-ink px-4 pb-16 pt-36 xs:min-h-[105svh] xs:px-6 xs:pb-20 xs:pt-44 sm:min-h-[100svh] sm:justify-end sm:px-10 sm:pb-24 sm:pt-32"
     >
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
@@ -96,10 +96,11 @@ export default function Hero() {
         </h1>
 
         <span className="hero-sub font-meta mt-4 block text-[10px] uppercase tracking-[0.2em] text-paper/60 xs:mt-12 xs:text-[11px]">
-          Events &bull; Production &bull; Experience Building
+          Events &bull; Production{" "}
+          <span className="block sm:inline">&bull; Experience Building</span>
         </span>
 
-        <p className="hero-sub mt-6 max-w-2xl text-sm font-semibold uppercase leading-tight text-paper xs:mt-8 xs:text-base sm:text-lg">
+        <p className="hero-sub mt-6 max-w-2xl text-xs font-semibold uppercase leading-tight text-paper xs:mt-8 xs:text-sm sm:text-lg">
           Some people attend experiences. Others build them.
         </p>
 
