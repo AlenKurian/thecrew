@@ -94,7 +94,7 @@ export default function Hero() {
           </span>
         </h1>
 
-        <span className="hero-sub font-meta mt-4 block text-[10px] uppercase tracking-[0.2em] text-paper/60 xs:mt-5 xs:text-[11px]">
+        <span className="hero-sub font-meta mt-4 block text-[10px] uppercase tracking-[0.2em] text-paper/60 xs:mt-12 xs:text-[11px]">
           Events &bull; Production &bull; Experience Building
         </span>
 
