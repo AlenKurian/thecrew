@@ -96,12 +96,12 @@ export default function Hero() {
         </h1>
 
         <span className="hero-sub font-meta mt-4 block text-[10px] uppercase tracking-[0.2em] text-paper/60 xs:mt-12 xs:text-[11px]">
-          Events &bull; Production{" "}
-          <span className="block sm:inline">&bull; Experience Building</span>
+          Events &bull; Production &bull; Experience Building
         </span>
 
         <p className="hero-sub mt-6 max-w-2xl text-xs font-semibold uppercase leading-tight text-paper xs:mt-8 xs:text-sm sm:text-lg">
-          Some people attend experiences. Others build them.
+          Some people attend experiences.{" "}
+          <span className="block sm:inline">Others build them.</span>
         </p>
 
         <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
