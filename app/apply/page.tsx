@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Header from "@/components/Header";
 import ApplicationFormSection from "@/components/ApplicationFormSection";
 import Footer from "@/components/Footer";
@@ -15,7 +16,7 @@ export default function ApplyPage() {
       <Header />
       <main className="pt-20 xs:pt-24 sm:pt-28">
         <div className="border-b border-paper/15 bg-ink px-4 pb-8 pt-5 xs:px-6 xs:pb-10 xs:pt-6 sm:px-10">
-          <a
+          <Link
             href="/"
             className="group mb-4 flex w-fit items-center gap-1.5 font-meta text-[10px] text-paper/60 transition-colors duration-300 hover:text-paper xs:mb-5 xs:text-[11px]"
           >
@@ -23,7 +24,7 @@ export default function ApplyPage() {
               ←
             </span>
             Back
-          </a>
+          </Link>
           <span className="font-meta text-[10px] text-paper xs:text-[11px]">
             Studio Wytes™ — The Crew™
           </span>

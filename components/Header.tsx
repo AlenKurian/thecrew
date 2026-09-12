@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { gsap } from "gsap";
 
 export default function Header() {
@@ -35,7 +36,7 @@ export default function Header() {
             By Studio Wytes™
           </span>
         </div>
-        <a
+        <Link
           href="/apply"
           className="group inline-flex items-center gap-1.5 text-[10px] xs:text-[11px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-ink bg-paper px-3.5 py-2 xs:px-4 xs:py-2.5 sm:px-5 sm:py-3 hover:bg-paper/80 transition-colors duration-300"
         >
@@ -43,7 +44,7 @@ export default function Header() {
           <span className="transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
-        </a>
+        </Link>
       </div>
     </header>
   );

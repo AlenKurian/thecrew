@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Link from "next/link";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
 
 export default function ApplicationCTA() {
@@ -48,7 +49,7 @@ export default function ApplicationCTA() {
         communicated via email.
       </p>
 
-      <a
+      <Link
         href="/apply"
         className="cta-reveal group relative mt-8 inline-flex items-center gap-2 overflow-hidden bg-ink px-6 py-4 text-[11px] font-bold uppercase leading-none tracking-[0.15em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink hover:ring-1 hover:ring-inset hover:ring-ink xs:mt-10 xs:px-8 xs:py-5 xs:text-xs sm:mt-12 sm:px-10 sm:py-6 sm:text-sm"
       >
@@ -56,7 +57,7 @@ export default function ApplicationCTA() {
         <span className="transition-transform duration-300 group-hover:translate-x-1">
           →
         </span>
-      </a>
+      </Link>
     </section>
   );
 }

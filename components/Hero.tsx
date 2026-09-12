@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -99,7 +100,7 @@ export default function Hero() {
         </span>
 
         <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
-          <a
+          <Link
             href="/apply"
             className="group inline-flex items-center gap-2 border border-paper/60 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
           >
@@ -107,7 +108,7 @@ export default function Hero() {
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>
-          </a>
+          </Link>
         </div>
       </div>
 
