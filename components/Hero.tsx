@@ -59,7 +59,7 @@ export default function Hero() {
     <section
       id="top"
       ref={containerRef}
-      className="relative flex min-h-[95svh] w-full flex-col justify-start overflow-hidden bg-ink px-4 pb-16 pt-20 xs:min-h-[95svh] xs:px-6 xs:pb-20 xs:pt-28 sm:min-h-[100svh] sm:justify-end sm:px-10 sm:pb-24 sm:pt-32"
+      className="relative flex min-h-[105svh] w-full flex-col justify-start overflow-hidden bg-ink px-4 pb-16 pt-28 xs:min-h-[105svh] xs:px-6 xs:pb-20 xs:pt-36 sm:min-h-[100svh] sm:justify-end sm:px-10 sm:pb-24 sm:pt-32"
     >
       {/* Background image */}
       <div ref={bgRef} className="absolute inset-0 -z-10">
