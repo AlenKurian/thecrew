@@ -104,7 +104,7 @@ export default function Hero() {
           <span className="block sm:inline">Others build them.</span>
         </p>
 
-        <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
+        <div className="hero-cta mt-14 flex flex-wrap items-center gap-5 xs:mt-10 sm:mt-10">
           <Link
             href="/apply"
             className="group inline-flex items-center gap-2 border border-paper/60 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
