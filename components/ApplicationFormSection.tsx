@@ -40,9 +40,10 @@ export default function ApplicationFormSection() {
             Get <span className="text-paper/80">in the Room.</span>
           </h2>
           <p className="mt-2 text-[12px] leading-relaxed text-paper/70 xs:mt-4 xs:text-base sm:text-lg">
-            This is a limited-position program built for people who are
-            curious, driven, and ready to contribute. Tell us who you are,
-            what you do, and why you want to get in the room.
+            Tell us who you are, what you want to build, what you bring, and
+            why you want to be part of THE CREW&trade;. Limited positions
+            available — participation details &amp; next steps communicated
+            via email.
           </p>
         </div>
 

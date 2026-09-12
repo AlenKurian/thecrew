@@ -23,15 +23,14 @@ const rows: Tile[][] = [
   [
     { label: audience[0] }, // Students
     { label: audience[1], variant: "solid" }, // Creators
-    { label: audience[2] }, // Marketers
+    { label: audience[2] }, // Event Professionals
   ],
   [
-    { label: audience[3] }, // Storytellers
-    { label: audience[4] }, // Event Professionals
-    { label: audience[5] }, // Young Professionals
+    { label: audience[3] }, // Young Professionals
+    { label: audience[4] }, // Entrepreneurs
   ],
   [
-    { label: audience[6] }, // Entrepreneurs
+    { label: audience[5] }, // Future Producers
     { label: "You?", variant: "outline" },
   ],
 ];

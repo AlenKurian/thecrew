@@ -8,150 +8,96 @@ export function cn(...inputs: ClassValue[]) {
 export const audience = [
   "Students",
   "Creators",
-  "Marketers",
-  "Storytellers",
   "Event Professionals",
   "Young Professionals",
   "Entrepreneurs",
+  "Future Producers",
 ];
 
-export const disciplines = [
+export const wytesStandardPrinciples = [
+  "Think beyond the event.",
+  "Understand the production.",
+  "Own the details.",
+  "Build the experience.",
+];
+
+export const stepInsideTheBuild = [
   {
     number: "01",
-    title: "Creative",
-    description: "Ideas, concepts, visual thinking & storytelling.",
+    title: "Event Concept",
+    description: "Ideas, formats, themes, experience design, and event direction.",
     image: "/images/creative.png",
   },
   {
     number: "02",
     title: "Production",
-    description: "Planning, coordination, execution & behind-the-scenes.",
+    description:
+      "Planning, timelines, logistics, technical coordination, vendors, and execution.",
     image:
       "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1400&auto=format&fit=crop",
   },
   {
     number: "03",
-    title: "Events",
-    description: "Live experiences, timelines, people & moving parts.",
+    title: "Event Operations",
+    description:
+      "Guest movement, backstage coordination, show flow, schedules, and live problem-solving.",
     image:
       "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1400&auto=format&fit=crop",
   },
   {
     number: "04",
-    title: "Media",
-    description: "Photography, videography, content & digital storytelling.",
+    title: "Experience Building",
+    description:
+      "Spaces, environments, moments, interactions, and the details that transform an event into an experience.",
     image: "/images/medi.png",
   },
   {
     number: "05",
-    title: "Marketing",
-    description: "Brand communication, audience thinking & campaigns.",
-    image: "/images/market.png",
-  },
-  {
-    number: "06",
-    title: "Operations",
-    description: "Systems, coordination & precision behind the scene.",
+    title: "On-Ground Execution",
+    description: "Real teams. Real pressure. Real deadlines. Real responsibility.",
     image: "/images/operatio.png",
   },
 ];
 
-export const included = [
-  {
-    number: "01",
-    title: "7-Day Stay",
-    description: "Accommodation provided throughout the entire program.",
-    icon: "stay",
-  },
-  {
-    number: "02",
-    title: "Food Provided",
-    description: "Your essentials are covered so you focus on creating.",
-    icon: "food",
-  },
-  {
-    number: "03",
-    title: "Hands-On",
-    description: "Learn by participating in active, real event production.",
-    icon: "hands-on",
-  },
-  {
-    number: "04",
-    title: "Networking",
-    description: "Connect across creative, business, media & startup sectors.",
-    icon: "networking",
-  },
-  {
-    number: "05",
-    title: "Team Access",
-    description: "Get close access to the core team behind the projects.",
-    icon: "team-access",
-  },
-  {
-    number: "06",
-    title: "Certificate",
-    description: "Official recognition for participation & contribution.",
-    icon: "certificate",
-  },
-] as const;
-
-export const whatYouTakeWithYou = [
-  {
-    label: "Experience",
-    description: "Real exposure to creative production and execution.",
-  },
-  {
-    label: "Perspective",
-    description: "A deeper understanding of multidisciplinary work.",
-  },
-  {
-    label: "Connections",
-    description:
-      "Relationships with ambitious people across creative and business communities.",
-  },
-  {
-    label: "Confidence",
-    description: "The ability to communicate, collaborate, contribute, and execute.",
-  },
-  {
-    label: "The Wytes Standard™",
-    description: "A stronger understanding of what professional creative work demands.",
-  },
-  {
-    label: "Recognition",
-    description: "Official recognition of your participation and contribution.",
-  },
+export const proximityChangesEverything = [
+  "The planning behind the event.",
+  "The production behind the experience.",
+  "The systems behind the execution.",
+  "The people behind the outcome.",
 ];
 
 export const whoItsForDetails = [
   {
     label: "Students",
-    description: "Move beyond the classroom and into real-world creative environments.",
+    description: "Step beyond theory and experience real production environments.",
   },
   {
     label: "Creators",
-    description: "Turn imagination into meaningful execution.",
-  },
-  {
-    label: "Storytellers",
-    description: "Build narratives that connect, move, and endure.",
-  },
-  {
-    label: "Marketers",
-    description: "Understand brands beyond campaigns.",
+    description: "Turn ideas into physical experiences.",
   },
   {
     label: "Event Professionals",
-    description: "Experience the precision behind memorable moments.",
+    description: "Sharpen your production and execution mindset.",
   },
   {
     label: "Young Professionals",
-    description:
-      "Expand your perspective, capabilities, and professional network.",
+    description: "Build practical experience and connections.",
   },
   {
     label: "Entrepreneurs",
-    description:
-      "Understand how ideas, teams, brands, and experiences come together.",
+    description: "Understand how experiences are designed and delivered.",
   },
+  {
+    label: "Future Producers",
+    description: "Get closer to the work that makes events happen.",
+  },
+];
+
+export const crewTraits = [
+  "Curious",
+  "Responsible",
+  "Hands-On",
+  "Detail-Driven",
+  "Collaborative",
+  "Ready to Contribute",
 ];

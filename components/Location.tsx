@@ -35,16 +35,9 @@ export default function Location() {
         className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04]"
         aria-hidden="true"
       >
-        <span className="font-display text-[45vw] leading-none sm:text-[24vw]">
-          ✦
-        </span>
       </div>
 
-      <span className="location-reveal relative block text-[10px] font-meta text-paper/60 xs:text-[11px] sm:text-xs">
-        Calicut, Kerala
-      </span>
-
-      <h2 className="location-reveal relative mt-3 font-display text-[6vw] uppercase leading-[0.95] text-paper xs:mt-4 xs:text-[8.3vw] sm:mt-6 sm:text-[3.3vw]">
+      <h2 className="location-reveal relative font-display text-[4.4vw] uppercase leading-[0.95] text-paper xs:text-[6vw] sm:text-[2.4vw]">
         Not For Everyone.{" "}
         <span className="mt-2 block text-paper/80 xs:mt-3 sm:mt-0 sm:inline">
           And That&rsquo;s The Point.
@@ -52,10 +45,9 @@ export default function Location() {
       </h2>
 
       <p className="location-reveal relative mx-auto mt-5 max-w-xl text-sm leading-relaxed text-paper/70 xs:mt-6 sm:text-base">
-        THE CREW&trade; is intentionally selective. We&rsquo;re not after the
-        biggest crowd &mdash; we&rsquo;re after the right people: curious,
-        contributing, detail-obsessed, holding themselves to a higher standard,
-        and wanting to be in the room when something happens.
+        THE CREW&trade; is intentionally selective. We&rsquo;re looking for
+        people who are curious, responsible, hands-on, detail-driven,
+        collaborative, and ready to contribute.
       </p>
     </section>
   );

@@ -170,7 +170,7 @@ function confirmationPlainText(data: ApplicationInput): string {
     "",
     "Your application to THE CREW has been received. We'll be in touch.",
     "",
-    "7 Days. One Experience. Calicut, Kerala.",
+    "A Room Full of Possibility.",
     "",
     "— STUDIO WYTES™",
   ].join("\n");
@@ -348,10 +348,10 @@ function renderApplicantEmail(data: ApplicationInput): string {
           The Experience
         </div>
         <div style="font-family:${SANS};font-weight:800;font-size:24px;line-height:1.05;letter-spacing:-0.02em;text-transform:uppercase;color:${BLACK};">
-          7 Days. One Experience.
+          A Room Full of Possibility.
         </div>
         <div style="font-family:${MONO};font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:${GREY};padding-top:14px;">
-          Calicut &nbsp;&bull;&nbsp; Kerala
+          Events &nbsp;&bull;&nbsp; Production &nbsp;&bull;&nbsp; Experience Building
         </div>
       </div>
     </td>

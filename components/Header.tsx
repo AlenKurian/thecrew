@@ -14,16 +14,6 @@ export default function Header() {
     );
   }, []);
 
-  const scrollToApply = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const el = document.getElementById("apply");
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    } else {
-      window.location.href = "/apply";
-    }
-  };
-
   return (
     <header
       ref={headerRef}
@@ -33,7 +23,7 @@ export default function Header() {
         href="#top"
         className="font-display text-base tracking-tight text-paper xs:text-lg sm:text-xl"
       >
-        STUDIO WYTES<sup className="relative top-[1em] align-top text-[0.4em]">™</sup>
+        STUDIO WYTES<sup className="relative top-[0.70em] align-top text-[1.05em]">™</sup>
       </a>
 
       <div className="flex items-center gap-3 xs:gap-4 sm:gap-8">
@@ -42,12 +32,11 @@ export default function Header() {
             The CREW™
           </span>
           <span className="font-meta text-[10px] text-paper/60">
-            Calicut • Kerala
+            By Studio Wytes™
           </span>
         </div>
         <a
-          href="#apply"
-          onClick={scrollToApply}
+          href="/apply"
           className="group inline-flex items-center gap-1.5 text-[10px] xs:text-[11px] sm:text-xs font-semibold tracking-[0.15em] uppercase text-ink bg-paper px-3.5 py-2 xs:px-4 xs:py-2.5 sm:px-5 sm:py-3 hover:bg-paper/80 transition-colors duration-300"
         >
           Apply

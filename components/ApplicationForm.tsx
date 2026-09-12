@@ -69,21 +69,15 @@ export default function ApplicationForm() {
         <p className="mt-4 max-w-sm text-sm text-paper/70 xs:mt-6 xs:text-base sm:text-lg">
           We&rsquo;ll be in touch.
         </p>
-        <button
-          type="button"
-          onClick={() => {
-            setState("idle");
-            document
-              .getElementById("top")
-              ?.scrollIntoView({ behavior: "smooth" });
-          }}
+        <a
+          href="/"
           className="group mt-8 inline-flex items-center gap-2 border border-paper/30 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-paper transition-colors duration-300 hover:border-paper xs:mt-10 xs:px-7 xs:py-4 xs:text-xs"
         >
           Back to the Experience
           <span className="transition-transform duration-300 group-hover:translate-x-1">
             →
           </span>
-        </button>
+        </a>
       </div>
     );
   }

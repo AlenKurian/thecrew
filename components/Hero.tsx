@@ -83,7 +83,7 @@ export default function Hero() {
         <h1 className="font-display text-paper leading-[0.95]">
           <span className="line-clip block">
             <span className="hero-line block text-[10vw] xs:text-[11.5vw] sm:text-[7.5vw] lg:text-[6.2vw]">
-              THE CREW<sup className="relative top-[0.001em] align-super text-[0.6em]">™</sup>
+              THE CREW<sup className="relative top-[0.21em] align-super text-[0.75em]">™</sup>
             </span>
           </span>
           <span className="line-clip mt-4 block xs:mt-6 sm:mt-8">
@@ -94,22 +94,16 @@ export default function Hero() {
           </span>
         </h1>
 
-        <div className="hero-sub mt-6 max-w-xl xs:mt-4 sm:mt-8">
-          <p className="text-base font-semibold text-paper xs:text-lg sm:text-xl">
-            Some people attend experiences. Others build them.
-          </p>
-          <p className="mt-3 text-sm text-paper/85 xs:text-base sm:text-lg">
-            THE CREW&trade; is an immersive creative experience for ambitious minds
-            ready to move beyond observation and step directly into the work.
-          </p>
-        </div>
+        <span className="hero-sub font-meta mt-4 block text-[10px] uppercase tracking-[0.2em] text-paper/60 xs:mt-5 xs:text-[11px]">
+          Events &bull; Production &bull; Experience Building
+        </span>
 
         <div className="hero-cta mt-8 flex flex-wrap items-center gap-5 xs:mt-6 sm:mt-10">
           <a
-            href="#apply"
-            className="group inline-flex items-center gap-2 bg-paper px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-ink transition-colors duration-300 hover:bg-paper/80 xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
+            href="/apply"
+            className="group inline-flex items-center gap-2 border border-paper/60 px-6 py-3.5 text-[11px] font-bold uppercase tracking-[0.15em] text-paper transition-colors duration-300 hover:bg-paper hover:text-ink xs:px-7 xs:py-4 xs:text-xs sm:px-8 sm:py-5 sm:text-sm"
           >
-            Apply for the Crew
+            Apply Now
             <span className="transition-transform duration-300 group-hover:translate-x-1">
               →
             </span>

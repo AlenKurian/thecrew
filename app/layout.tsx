@@ -31,19 +31,18 @@ export const metadata: Metadata = {
     template: "%s — STUDIO WYTES™ THE CREW",
   },
   description:
-    "7 days. One experience. A room full of possibility. STUDIO WYTES™ is opening THE CREW — a limited, immersive 7-day experience in Calicut, Kerala. Apply to get in the room.",
+    "A room full of possibility. STUDIO WYTES™ presents THE CREW — an immersive event, production, and experience-building program. No spectators. You're part of the crew.",
   keywords: [
     "Studio Wytes",
     "The Crew",
-    "Calicut internship",
-    "Kerala creative internship",
     "event production experience",
+    "experience building",
     "creative studio experience",
   ],
   openGraph: {
     title: "STUDIO WYTES™ — THE CREW",
     description:
-      "7 days. One experience. A room full of possibility. Apply for THE CREW — Calicut, Kerala.",
+      "A room full of possibility. Apply for THE CREW — events, production, experience building.",
     url: siteUrl,
     siteName: "Studio Wytes — The Crew",
     locale: "en_IN",
@@ -52,7 +51,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "STUDIO WYTES™ — THE CREW",
-    description: "7 days. One experience. A room full of possibility.",
+    description: "A room full of possibility.",
   },
 };
 

@@ -5,7 +5,7 @@ const ITEMS: ReactNode[] = [
     STUDIO WYTES<sup className="relative -top-[0.6em] align-top text-[0.4em]">™</sup>
   </>,
   "GET IN THE ROOM",
-  "7 DAYS",
+  "NO SPECTATORS",
   <>
     THE CREW<sup className="relative -top-[0.6em] align-top text-[0.4em]">™</sup>
   </>,

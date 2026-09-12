@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { gsap, ScrollTrigger } from "@/lib/gsapSetup";
-import { disciplines } from "@/lib/utils";
+import { stepInsideTheBuild } from "@/lib/utils";
 
 export default function Disciplines() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -30,10 +30,10 @@ export default function Disciplines() {
   return (
     <section ref={sectionRef} className="bg-ink">
       <span className="mb-4 block px-4 pt-12 text-[9px] font-meta text-paper/60 xs:px-6 xs:pt-24 xs:text-[11px] sm:px-10 sm:pt-32 sm:mb-16">
-        You&rsquo;ll Get Close To
+        Step Inside the Build
       </span>
 
-      {disciplines.map((item, i) => (
+      {stepInsideTheBuild.map((item, i) => (
         <div
           key={item.title}
           className={`discipline-card flex flex-col border-t border-paper/15 xs:flex-row ${

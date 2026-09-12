@@ -1,19 +1,21 @@
 export default function Footer() {
   return (
     <footer className="border-t border-ink/15 bg-paper px-4 py-8 xs:px-6 xs:py-10 sm:px-10 sm:py-14">
-      <h2 className="font-display text-[5.4vw] uppercase leading-none text-ink xs:text-[7.5vw] sm:text-[4.2vw]">
-        Studio Wytes<sup className="relative top-[0.5em] align-top text-[0.4em]">™</sup>
-      </h2>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+        <h2 className="font-display text-[4.6vw] uppercase leading-none text-ink xs:text-[6vw] sm:text-3xl">
+          Studio Wytes<sup className="relative top-[0.58em] align-top text-[1.05em]">™</sup>
+        </h2>
 
-      <p className="mt-3 max-w-md font-display text-[3.4vw] uppercase leading-[1.1] text-ink/45 xs:mt-4 xs:text-[4.2vw] sm:text-xl">
-        Create the experience.
-        <br />
-        Become part of the story.
-      </p>
+        <p className="max-w-md font-display text-[3.4vw] uppercase leading-[1.1] text-ink/45 xs:text-[4.2vw] sm:text-right sm:text-xl">
+          Come curious. Think big.
+          <br />
+          Build with purpose.
+        </p>
+      </div>
 
       <div className="mt-6 flex flex-col gap-6 xs:mt-8 xs:gap-8 sm:mt-10 sm:flex-row sm:items-end sm:justify-between">
-        <span className="text-[10px] font-meta text-ink/50 xs:text-[11px]">
-          Calicut • Kerala
+        <span className="text-[10px] font-meta uppercase tracking-[0.1em] text-ink/50 xs:text-[11px]">
+          The Wytes Standard&trade; | The Crew&trade; by Studio Wytes&trade;
         </span>
       </div>
 

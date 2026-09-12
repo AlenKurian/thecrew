@@ -26,7 +26,7 @@ export default function OpengraphImage() {
             fontWeight: 700,
           }}
         >
-          Studio Wytes™ — The Crew
+          Studio Wytes™ — The Crew™
         </div>
         <div
           style={{
@@ -39,7 +39,7 @@ export default function OpengraphImage() {
             letterSpacing: -2,
           }}
         >
-          7 Days. One Experience.
+          A Room Full of Possibility.
         </div>
         <div
           style={{
@@ -51,7 +51,7 @@ export default function OpengraphImage() {
             letterSpacing: 2,
           }}
         >
-          Calicut • Kerala
+          Events • Production • Experience Building
         </div>
       </div>
     ),
